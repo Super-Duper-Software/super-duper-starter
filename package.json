@@ -7,7 +7,7 @@
     "format-lint": "biome check .",
     "format-lint:fix": "biome check . --write",
     "turbo": "turbo",
-    "check-types": "turbo run check-types"
+    "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.11",
