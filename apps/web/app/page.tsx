@@ -1,4 +1,8 @@
-export default function Home() {
+import { getApi } from "@repo/api-client/generated/fetch";
+
+export default async function Home() {
+  const { data } = await getApi();
+
   return (
     <div>
       <h1>sup boye</h1>
@@ -12,6 +16,7 @@ export default function Home() {
           Peep us here
         </a>
       </h2>
+      <h3>API status: {data?.message}</h3>
     </div>
   );
 }
