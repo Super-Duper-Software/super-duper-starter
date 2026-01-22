@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Providers from "../components/Providers";
 
 export const metadata: Metadata = {
   title: "Super Duper Starter",
@@ -12,7 +13,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <Providers>
+        <body>{children}</body>
+      </Providers>
     </html>
   );
 }

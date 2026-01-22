@@ -1,4 +1,5 @@
 import { getApi } from "@repo/api-client/generated/fetch";
+import ClientPage from "./client-page";
 
 export default async function Home() {
   const { data } = await getApi();
@@ -16,7 +17,8 @@ export default async function Home() {
           Peep us here
         </a>
       </h2>
-      <h3>API status: {data?.message}</h3>
+      <h3>API status (server rendered): {data?.message}</h3>
+      <ClientPage />
     </div>
   );
 }

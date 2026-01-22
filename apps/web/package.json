@@ -10,9 +10,10 @@
     "typecheck": "next typegen && tsc --noEmit"
   },
   "dependencies": {
-    "@repo/ui": "workspace:*",
     "@repo/api": "workspace:*",
     "@repo/api-client": "workspace:*",
+    "@repo/ui": "workspace:*",
+    "@tanstack/react-query": "^5.90.19",
     "hono": "^4.11.4",
     "next": "16.1.0",
     "react": "^19.2.0",
