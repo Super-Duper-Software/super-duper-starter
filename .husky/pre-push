@@ -1,1 +1,11 @@
 pnpm turbo format-lint typecheck
+
+# Generate OpenAPI spec
+pnpm turbo codegen
+
+# Check if the OpenAPI spec has changed
+if ! git diff --exit-code packages/api-client/openapi-spec.json > /dev/null 2>&1; then
+  echo "❌ Error: OpenAPI spec has uncommitted changes"
+  echo "Please run 'pnpm turbo codegen' and commit the updated packages/api-client/openapi-spec.json"
+  exit 1
+fi
