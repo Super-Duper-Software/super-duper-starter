@@ -8,7 +8,7 @@ export default defineConfig({
       baseUrl: "http://localhost:3000",
     },
     input: {
-      target: "http://localhost:3000/api/doc",
+      target: "./openapi-spec.json",
     },
   },
   query: {
@@ -18,7 +18,7 @@ export default defineConfig({
       baseUrl: "http://localhost:3000",
     },
     input: {
-      target: "http://localhost:3000/api/doc",
+      target: "./openapi-spec.json",
     },
   },
 });

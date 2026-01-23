@@ -6,7 +6,8 @@
     "./*": "./src/*.ts"
   },
   "scripts": {
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "codegen": "tsx ./src/utils/generateSpec.ts"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
@@ -16,6 +17,7 @@
   "dependencies": {
     "@hono/zod-openapi": "^1.2.0",
     "@scalar/hono-api-reference": "^0.9.35",
-    "hono": "^4.11.4"
+    "hono": "^4.11.4",
+    "tsx": "^4.21.0"
   }
 }
