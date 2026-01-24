@@ -39,7 +39,9 @@ export function Slider<T extends number | number[]>({
                 <div
                   className="fill"
                   style={
-                    { "--size": state.getThumbPercent(0) * 100 + "%" } as any
+                    {
+                      "--size": `${state.getThumbPercent(0) * 100}%`,
+                    } as React.CSSProperties
                   }
                 />
               ) : state.values.length === 2 ? (
@@ -48,19 +50,19 @@ export function Slider<T extends number | number[]>({
                   className="fill"
                   style={
                     {
-                      "--start": state.getThumbPercent(0) * 100 + "%",
+                      "--start": `${state.getThumbPercent(0) * 100}%`,
                       "--size":
                         (state.getThumbPercent(1) - state.getThumbPercent(0)) *
                           100 +
                         "%",
-                    } as any
+                    } as React.CSSProperties
                   }
                 />
               ) : null}
             </div>
-            {state.values.map((_, i) => (
+            {state.values.map((value, i) => (
               <SliderThumb
-                key={i}
+                key={`thumb-${i}-${value}`}
                 index={i}
                 aria-label={thumbLabels?.[i]}
                 className="react-aria-SliderThumb indicator"

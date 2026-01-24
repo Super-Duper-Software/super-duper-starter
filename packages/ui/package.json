@@ -11,6 +11,7 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
     "@babel/preset-env": "^7.28.3",
     "@babel/preset-react": "^7.24.1",
     "@babel/preset-typescript": "^7.27.1",
@@ -22,8 +23,9 @@
     "@storybook/react": "^8.6.14",
     "@storybook/react-webpack5": "^8.6.14",
     "@storybook/test": "^8.6.14",
-    "@types/react": "^19.1.0",
-    "@types/react-dom": "^19.1.0",
+    "@types/node": "^22.15.3",
+    "@types/react": "19.2.0",
+    "@types/react-dom": "19.2.0",
     "clsx": "^2.1.1",
     "lightningcss-loader": "^2.1.0",
     "lucide-react": "^0.517.0",
@@ -35,8 +37,6 @@
     "typescript": "^5.8.2"
   },
   "resolutions": {
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
     "@types/mime": "3.0.4",
     "jackspeak": "2.1.1"
   }

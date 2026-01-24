@@ -24,6 +24,7 @@ export const Example: Story = (args) => (
         src="https://images.unsplash.com/photo-1705034598432-1694e203cdf3?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         width={600}
         height={400}
+        alt="Desert Sunset"
       />
       <Text>Desert Sunset</Text>
       <Text slot="description">PNG • 2/3/2024</Text>
@@ -33,6 +34,7 @@ export const Example: Story = (args) => (
         src="https://images.unsplash.com/photo-1722233987129-61dc344db8b6?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         width={600}
         height={900}
+        alt="Hiking Trail"
       />
       <Text>Hiking Trail</Text>
       <Text slot="description">JPEG • 1/10/2022</Text>
@@ -42,6 +44,7 @@ export const Example: Story = (args) => (
         src="https://images.unsplash.com/photo-1629812456605-4a044aa38fbc?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         width={600}
         height={899}
+        alt="Lion"
       />
       <Text>Lion</Text>
       <Text slot="description">JPEG • 8/28/2021</Text>
@@ -51,6 +54,7 @@ export const Example: Story = (args) => (
         src="https://images.unsplash.com/photo-1722172118908-1a97c312ce8c?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         width={600}
         height={900}
+        alt="Mountain Sunrise"
       />
       <Text>Mountain Sunrise</Text>
       <Text slot="description">PNG • 3/15/2015</Text>
@@ -60,6 +64,7 @@ export const Example: Story = (args) => (
         src="https://images.unsplash.com/photo-1574870111867-089730e5a72b?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         width={600}
         height={900}
+        alt="Giraffe tongue"
       />
       <Text>Giraffe tongue</Text>
       <Text slot="description">PNG • 11/27/2019</Text>
@@ -69,6 +74,7 @@ export const Example: Story = (args) => (
         src="https://images.unsplash.com/photo-1718378037953-ab21bf2cf771?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         width={600}
         height={402}
+        alt="Golden Hour"
       />
       <Text>Golden Hour</Text>
       <Text slot="description">WEBP • 7/24/2024</Text>
@@ -78,6 +84,7 @@ export const Example: Story = (args) => (
         src="https://images.unsplash.com/photo-1721661657253-6621d52db753?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDYxfE04alZiTGJUUndzfHxlbnwwfHx8fHw%3D"
         width={600}
         height={900}
+        alt="Architecture"
       />
       <Text>Architecture</Text>
       <Text slot="description">PNG • 12/24/2016</Text>
@@ -87,6 +94,7 @@ export const Example: Story = (args) => (
         src="https://images.unsplash.com/photo-1456926631375-92c8ce872def?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         width={600}
         height={400}
+        alt="Peeking leopard"
       />
       <Text>Peeking leopard</Text>
       <Text slot="description">JPEG • 3/2/2016</Text>
@@ -96,6 +104,7 @@ export const Example: Story = (args) => (
         src="https://images.unsplash.com/photo-1721598359121-363311b3b263?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDc0fE04alZiTGJUUndzfHxlbnwwfHx8fHw%3D"
         width={600}
         height={900}
+        alt="Roofs"
       />
       <Text>Roofs</Text>
       <Text slot="description">JPEG • 4/24/2025</Text>
@@ -105,6 +114,7 @@ export const Example: Story = (args) => (
         src="https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         width={600}
         height={990}
+        alt="Half Dome Deer"
       />
       <Text>Half Dome Deer</Text>
       <Text slot="description">DNG • 8/28/2018</Text>

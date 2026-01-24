@@ -22,8 +22,8 @@ export function ProgressBar({ label, ...props }: ProgressBarProps) {
               className="fill"
               style={
                 {
-                  "--percent": (isIndeterminate ? 100 : percentage) + "%",
-                } as any
+                  "--percent": `${isIndeterminate ? 100 : percentage}%`,
+                } as React.CSSProperties
               }
             />
           </div>

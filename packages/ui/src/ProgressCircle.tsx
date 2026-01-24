@@ -22,7 +22,14 @@ export function ProgressCircle(props: ProgressCircleProps) {
     >
       {({ percentage, isIndeterminate }) => (
         <>
-          <svg fill="none" width="100%" height="100%" viewBox="0 0 32 32">
+          <svg
+            fill="none"
+            width="100%"
+            height="100%"
+            viewBox="0 0 32 32"
+            role="img"
+            aria-label="Progress circle"
+          >
             <circle
               cx="50%"
               cy="50%"

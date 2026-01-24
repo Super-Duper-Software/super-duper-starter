@@ -172,7 +172,7 @@
   border-bottom: 0.5px solid var(--border-color);
   border-inline-end: 0.5px solid var(--border-color);
   position: relative;
-  z-index: calc(sibling-count() - sibling-index());
+  z-index: 1;
 
   &:last-child {
     border-inline-end: none;

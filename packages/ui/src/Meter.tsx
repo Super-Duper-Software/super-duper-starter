@@ -22,14 +22,14 @@ export function Meter({ label, ...props }: MeterProps) {
               className="fill"
               style={
                 {
-                  width: percentage + "%",
+                  width: `${percentage}%`,
                   "--fill-color":
                     percentage < 70
                       ? "var(--green)"
                       : percentage < 90
                         ? "var(--orange)"
                         : "var(--red)",
-                } as any
+                } as React.CSSProperties
               }
             />
           </div>

@@ -8,6 +8,6 @@
 
 .react-aria-ColorArea {
   &[data-disabled] {
-    background: gray !important;
+    background: gray;
   }
 }
