@@ -1,4 +1,5 @@
 import { getApi } from "@repo/api-client/generated/fetch";
+import { Button } from "@repo/ui/Button";
 import ClientPage from "./client-page";
 
 export default async function Home() {
@@ -9,13 +10,7 @@ export default async function Home() {
       <h1>sup boye</h1>
       <h2>
         {" "}
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://superdupersoftware.net"
-        >
-          Peep us here
-        </a>
+        <Button>Peep us here</Button>
       </h2>
       <h3>API status (server rendered): {data?.message}</h3>
       <ClientPage />
