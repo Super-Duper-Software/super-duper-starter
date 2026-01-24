@@ -1,4 +1,4 @@
-import app from "@repo/api/app";
+import app from "@superdupersoftware/api/app";
 import { handle } from "hono/vercel";
 
 export const GET = handle(app);

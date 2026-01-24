@@ -1,5 +1,5 @@
 {
-  "name": "@repo/api",
+  "name": "@superdupersoftware/api",
   "version": "0.0.0",
   "private": true,
   "exports": {
@@ -10,7 +10,7 @@
     "codegen": "tsx ./src/utils/generateSpec.ts"
   },
   "devDependencies": {
-    "@repo/typescript-config": "workspace:*",
+    "@superdupersoftware/typescript-config": "workspace:*",
     "@types/node": "^22.15.3",
     "typescript": "5.9.2"
   },

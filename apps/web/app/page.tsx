@@ -1,5 +1,5 @@
-import { getApi } from "@repo/api-client/generated/fetch";
-import { Button } from "@repo/ui/Button";
+import { getApi } from "@superdupersoftware/api-client/generated/fetch";
+import { Button } from "@superdupersoftware/ui/Button";
 import ClientPage from "./client-page";
 
 export default async function Home() {
