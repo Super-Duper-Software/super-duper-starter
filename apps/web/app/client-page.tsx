@@ -1,6 +1,6 @@
 "use client";
 
-import { useGetApi } from "@repo/api-client/generated/query";
+import { useGetApi } from "@superdupersoftware/api-client/generated/query";
 
 export default function ClientPage() {
   const { data, isLoading } = useGetApi();

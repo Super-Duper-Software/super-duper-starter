@@ -1,5 +1,5 @@
 {
-  "name": "@repo/api-client",
+  "name": "@superdupersoftware/api-client",
   "version": "0.0.0",
   "private": true,
   "exports": {
@@ -10,8 +10,8 @@
     "codegen": "orval --config orval.config.ts"
   },
   "devDependencies": {
-    "@repo/typescript-config": "workspace:*",
-    "@repo/api": "workspace:*",
+    "@superdupersoftware/typescript-config": "workspace:*",
+    "@superdupersoftware/api": "workspace:*",
     "@types/node": "^22.15.3",
     "orval": "^7.19.0",
     "typescript": "5.9.2"

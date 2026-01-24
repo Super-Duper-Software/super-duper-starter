@@ -9,7 +9,7 @@
     "turbo": "turbo",
     "typecheck": "turbo run typecheck",
     "prepare": "husky",
-    "storybook": "pnpm --filter @repo/ui storybook"
+    "storybook": "pnpm --filter @superdupersoftware/ui storybook"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.11",

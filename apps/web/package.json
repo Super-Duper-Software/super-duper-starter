@@ -10,9 +10,9 @@
     "typecheck": "next typegen && tsc --noEmit"
   },
   "dependencies": {
-    "@repo/api": "workspace:*",
-    "@repo/api-client": "workspace:*",
-    "@repo/ui": "workspace:*",
+    "@superdupersoftware/api": "workspace:*",
+    "@superdupersoftware/api-client": "workspace:*",
+    "@superdupersoftware/ui": "workspace:*",
     "@tanstack/react-query": "^5.90.19",
     "hono": "^4.11.4",
     "next": "16.1.0",
@@ -20,7 +20,7 @@
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "@repo/typescript-config": "workspace:*",
+    "@superdupersoftware/typescript-config": "workspace:*",
     "@types/node": "^22.15.3",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
