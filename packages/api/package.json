@@ -15,6 +15,7 @@
     "typescript": "5.9.2"
   },
   "dependencies": {
+    "@superdupersoftware/db": "workspace:*",
     "@hono/zod-openapi": "^1.2.0",
     "@scalar/hono-api-reference": "^0.9.35",
     "hono": "^4.11.4",

@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev",
+    "dev": "dotenv -- turbo run dev",
+    "db": "dotenv -- pnpm --filter @superdupersoftware/db",
     "format-lint": "biome check .",
     "format-lint:fix": "biome check . --write",
     "turbo": "turbo",
@@ -13,6 +14,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.11",
+    "dotenv": "^17.2.3",
+    "dotenv-cli": "^11.0.0",
     "husky": "^9.1.7",
     "turbo": "^2.7.5",
     "typescript": "5.9.2"

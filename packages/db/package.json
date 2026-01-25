@@ -1,0 +1,33 @@
+{
+  "name": "@superdupersoftware/db",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "prisma": "prisma",
+    "generate": "prisma generate",
+    "migrate": "prisma migrate dev --skip-generate",
+    "deploy": "prisma migrate deploy",
+    "dev": "docker compose up",
+    "seed": "tsx prisma/seed/index.ts"
+  },
+  "devDependencies": {
+    "@superdupersoftware/env": "workspace:*",
+    "@superdupersoftware/typescript-config": "workspace:*",
+    "@types/node": "^22.15.3",
+    "@types/pg": "^8.16.0",
+    "prisma": "^7.3.0",
+    "tsx": "^4.21.0",
+    "typescript": "5.9.2"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.3.0",
+    "@prisma/client": "^7.3.0",
+    "pg": "^8.17.2",
+    "prisma-zod-generator": "^2.1.2",
+    "zod": "^4.3.6"
+  }
+}

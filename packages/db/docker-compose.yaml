@@ -1,0 +1,18 @@
+version: "3.9"
+name: superduperdb
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: superduperdb
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: superduperdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
