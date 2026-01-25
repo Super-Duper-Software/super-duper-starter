@@ -1,6 +1,4 @@
-import { OpenAPIHono } from "@hono/zod-openapi";
+import { createHono } from "../../hono";
 import { signUpApp } from "./signUp/signUp.app";
 
-export const authApp = new OpenAPIHono()
-  .basePath("/auth")
-  .route("/", signUpApp);
+export const authApp = createHono().basePath("/auth").route("/", signUpApp);

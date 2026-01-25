@@ -1,8 +1,8 @@
-import { OpenAPIHono } from "@hono/zod-openapi";
 import { APIError, auth } from "@superdupersoftware/auth";
+import { createHono } from "../../../hono";
 import { signUpRoute } from "./signUp.route";
 
-export const signUpApp = new OpenAPIHono().openapi(signUpRoute, async (c) => {
+export const signUpApp = createHono().openapi(signUpRoute, async (c) => {
   const { email, password, name } = c.req.valid("json");
 
   try {

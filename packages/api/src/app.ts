@@ -1,8 +1,9 @@
-import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
+import { createRoute, z } from "@hono/zod-openapi";
 import { Scalar } from "@scalar/hono-api-reference";
 import { prisma, UserResultSchema } from "@superdupersoftware/db";
 import { accountApp } from "./features/account/account.app";
 import { authApp } from "./features/auth/auth.app";
+import { createHono } from "./hono";
 
 type OpenAPIObjectConfig = Parameters<typeof app.getOpenAPI31Document>[0];
 
@@ -46,9 +47,7 @@ const userRoute = createRoute({
   },
 });
 
-const app = new OpenAPIHono({
-  strict: true,
-}).basePath("/api");
+const app = createHono().basePath("/api");
 
 app.openapi(route, (c) =>
   c.json({
