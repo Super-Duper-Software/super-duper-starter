@@ -1,6 +1,7 @@
 import { createRoute, z } from "@hono/zod-openapi";
 import { Scalar } from "@scalar/hono-api-reference";
 import { prisma, UserResultSchema } from "@superdupersoftware/db";
+import { HTTPException } from "hono/http-exception";
 import { accountApp } from "./features/account/account.app";
 import { authApp } from "./features/auth/auth.app";
 import { createHono } from "./hono";
@@ -68,6 +69,15 @@ app.openapi(userRoute, async (c) => {
 
 app.route("/", authApp);
 app.route("/", accountApp);
+
+app.onError((err, c) => {
+  if (err instanceof HTTPException) {
+    return c.json({ message: err.message }, err.status);
+  }
+  // TODO: replace with logger w/ stack trace
+  console.error(`[UNHANDLED EXCEPTION] ${err.message}`);
+  return c.json({ message: "Internal Server Error" }, 500);
+});
 
 export const openAPIConfig: OpenAPIObjectConfig = {
   openapi: "3.0.0",
