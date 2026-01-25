@@ -1,10 +1,12 @@
 import { createRoute, z } from "@hono/zod-openapi";
 import { AccountResultSchema, UserResultSchema } from "@superdupersoftware/db";
+import { sessionMiddleware } from "../../middleware/auth";
 import { errorResponseDefaults } from "../../schemas/error";
 
 export const accountRoute = createRoute({
   method: "get",
   path: "/account",
+  middleware: [sessionMiddleware],
   responses: {
     200: {
       description: "Account information",

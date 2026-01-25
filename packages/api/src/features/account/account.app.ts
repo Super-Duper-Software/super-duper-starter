@@ -1,16 +1,15 @@
-import { OpenAPIHono } from "@hono/zod-openapi";
-import { auth } from "@superdupersoftware/auth";
 import { prisma } from "@superdupersoftware/db";
+import { createHono } from "../../hono";
 import { accountRoute } from "./account.route";
 
-export const accountApp = new OpenAPIHono().openapi(accountRoute, async (c) => {
-  const session = await auth.api.getSession({ headers: c.req.raw.headers });
-  if (!session) {
+export const accountApp = createHono().openapi(accountRoute, async (c) => {
+  const userContext = c.get("user");
+  if (!userContext) {
     return c.json({ message: "Unauthorized" }, 401);
   }
 
   const user = await prisma.user.findFirst({
-    where: { id: session?.user.id },
+    where: { id: userContext.id },
     include: {
       accounts: {
         omit: {
