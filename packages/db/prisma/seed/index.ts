@@ -1,8 +1,8 @@
-import prisma from "../../src/client";
+import { prisma } from "../../src/client";
 import { seedUsers } from "./users";
 
 async function main() {
-  seedUsers(prisma);
+  await seedUsers(prisma);
 }
 
 main()
