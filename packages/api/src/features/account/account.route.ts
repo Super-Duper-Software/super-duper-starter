@@ -1,7 +1,7 @@
-import { createRoute, z } from "@hono/zod-openapi";
-import { AccountResultSchema, UserResultSchema } from "@superdupersoftware/db";
+import { createRoute } from "@hono/zod-openapi";
 import { sessionMiddleware } from "../../middleware/auth";
 import { errorResponseDefaults } from "../../schemas/error";
+import { AccountResponseBodySchema } from "./account.schema";
 
 export const accountRoute = createRoute({
   method: "get",
@@ -12,13 +12,7 @@ export const accountRoute = createRoute({
       description: "Account information",
       content: {
         "application/json": {
-          schema: UserResultSchema.omit({
-            sessions: true,
-          }).extend({
-            accounts: z.array(
-              AccountResultSchema.omit({ user: true, password: true }),
-            ),
-          }),
+          schema: AccountResponseBodySchema,
         },
       },
     },
