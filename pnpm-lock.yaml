@@ -78,6 +78,9 @@ importers:
       '@scalar/hono-api-reference':
         specifier: ^0.9.35
         version: 0.9.35(hono@4.11.4)
+      '@superdupersoftware/auth':
+        specifier: workspace:*
+        version: link:../auth
       '@superdupersoftware/db':
         specifier: workspace:*
         version: link:../db

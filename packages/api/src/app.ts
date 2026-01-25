@@ -1,6 +1,8 @@
 import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
 import { Scalar } from "@scalar/hono-api-reference";
 import { prisma, UserResultSchema } from "@superdupersoftware/db";
+import { accountApp } from "./features/account/account.app";
+import { authApp } from "./features/auth/auth.app";
 
 type OpenAPIObjectConfig = Parameters<typeof app.getOpenAPI31Document>[0];
 
@@ -64,6 +66,9 @@ app.openapi(userRoute, async (c) => {
   });
   return c.json(users, 200);
 });
+
+app.route("/", authApp);
+app.route("/", accountApp);
 
 export const openAPIConfig: OpenAPIObjectConfig = {
   openapi: "3.0.0",
