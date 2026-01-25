@@ -9,6 +9,14 @@ export type GetApi200 = {
   message: string;
 };
 
+export type GetApiUsers200ItemName = string | null;
+
+export type GetApiUsers200Item = {
+  id: number;
+  name: GetApiUsers200ItemName;
+  email: string;
+};
+
 export type getApiResponse200 = {
   data: GetApi200
   status: 200
@@ -44,4 +52,43 @@ export const getApi = async ( options?: RequestInit): Promise<getApiResponse> =>
   
   const data: getApiResponse['data'] = body ? JSON.parse(body) : {}
   return { data, status: res.status, headers: res.headers } as getApiResponse
+}
+
+
+
+export type getApiUsersResponse200 = {
+  data: GetApiUsers200Item[]
+  status: 200
+}
+    
+export type getApiUsersResponseSuccess = (getApiUsersResponse200) & {
+  headers: Headers;
+};
+;
+
+export type getApiUsersResponse = (getApiUsersResponseSuccess)
+
+export const getGetApiUsersUrl = () => {
+
+
+  
+
+  return `http://localhost:3000/api/users`
+}
+
+export const getApiUsers = async ( options?: RequestInit): Promise<getApiUsersResponse> => {
+  
+  const res = await fetch(getGetApiUsersUrl(),
+  {      
+    ...options,
+    method: 'GET'
+    
+    
+  }
+)
+
+  const body = [204, 205, 304].includes(res.status) ? null : await res.text();
+  
+  const data: getApiUsersResponse['data'] = body ? JSON.parse(body) : {}
+  return { data, status: res.status, headers: res.headers } as getApiUsersResponse
 }
