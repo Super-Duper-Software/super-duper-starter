@@ -6,6 +6,8 @@ export const SignUpRequestBodySchema = z.object({
   password: z.string().min(8).max(100),
 });
 
+export type SignUpRequestBody = z.infer<typeof SignUpRequestBodySchema>;
+
 export const SignUpResponseBodySchema = z.object({
   token: z.string().nullable(),
   user: z.object({

@@ -6,16 +6,20 @@
  * OpenAPI spec version: 1.0.0
  */
 import {
+  useMutation,
   useQuery
 } from '@tanstack/react-query';
 import type {
   DataTag,
   DefinedInitialDataOptions,
   DefinedUseQueryResult,
+  MutationFunction,
   QueryClient,
   QueryFunction,
   QueryKey,
   UndefinedInitialDataOptions,
+  UseMutationOptions,
+  UseMutationResult,
   UseQueryOptions,
   UseQueryResult
 } from '@tanstack/react-query';
@@ -31,12 +35,108 @@ export type GetApi200 = {
   message: string;
 };
 
-export type GetApiUsers200ItemName = string | null;
-
 export type GetApiUsers200Item = {
-  id: number;
-  name: GetApiUsers200ItemName;
+  id: string;
+  name: string;
   email: string;
+};
+
+export type PostApiAuthSignUpBody = {
+  /**
+   * @minLength 1
+   * @maxLength 100
+   */
+  name: string;
+  email: string;
+  /**
+   * @minLength 8
+   * @maxLength 100
+   */
+  password: string;
+};
+
+export type PostApiAuthSignUp201Token = string | null;
+
+export type PostApiAuthSignUp201UserImage = string | null;
+
+export type PostApiAuthSignUp201User = {
+  id: string;
+  name: string;
+  email: string;
+  emailVerified: boolean;
+  image?: PostApiAuthSignUp201UserImage;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type PostApiAuthSignUp201 = {
+  token: PostApiAuthSignUp201Token;
+  user: PostApiAuthSignUp201User;
+};
+
+export type PostApiAuthSignUp422 = {
+  code?: string;
+  message?: string;
+};
+
+export type PostApiAuthSignInBody = {
+  email: string;
+  /**
+   * @minLength 8
+   * @maxLength 100
+   */
+  password: string;
+};
+
+export type PostApiAuthSignIn201Redirect = boolean | null;
+
+export type PostApiAuthSignIn201Token = string | null;
+
+export type PostApiAuthSignIn201UserImage = string | null;
+
+export type PostApiAuthSignIn201User = {
+  id: string;
+  name: string;
+  email: string;
+  emailVerified: boolean;
+  image?: PostApiAuthSignIn201UserImage;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type PostApiAuthSignIn201 = {
+  redirect: PostApiAuthSignIn201Redirect;
+  token: PostApiAuthSignIn201Token;
+  user: PostApiAuthSignIn201User;
+};
+
+export type PostApiAuthSignIn401 = {
+  code?: string;
+  message?: string;
+};
+
+export type PostApiAuthSignOut200 = {
+  success: boolean;
+};
+
+export type GetApiAccount200Image = string | null;
+
+export type GetApiAccount200 = {
+  id: string;
+  name: string;
+  email: string;
+  emailVerified: boolean;
+  image: GetApiAccount200Image;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type GetApiAccount401 = {
+  message: string;
+};
+
+export type GetApiAccount404 = {
+  message: string;
 };
 
 export const getApi = (
@@ -197,6 +297,258 @@ export function useGetApiUsers<TData = Awaited<ReturnType<typeof getApiUsers>>, 
  ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
 
   const queryOptions = getGetApiUsersQueryOptions(options)
+
+  const query = useQuery(queryOptions, queryClient) as  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
+
+  query.queryKey = queryOptions.queryKey ;
+
+  return query;
+}
+
+
+
+
+
+export const postApiAuthSignUp = (
+    postApiAuthSignUpBody: PostApiAuthSignUpBody, options?: AxiosRequestConfig
+ ): Promise<AxiosResponse<PostApiAuthSignUp201>> => {
+    
+    
+    return axios.post(
+      `http://localhost:3000/api/auth/sign-up`,
+      postApiAuthSignUpBody,options
+    );
+  }
+
+
+
+export const getPostApiAuthSignUpMutationOptions = <TError = AxiosError<PostApiAuthSignUp422>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof postApiAuthSignUp>>, TError,{data: PostApiAuthSignUpBody}, TContext>, axios?: AxiosRequestConfig}
+): UseMutationOptions<Awaited<ReturnType<typeof postApiAuthSignUp>>, TError,{data: PostApiAuthSignUpBody}, TContext> => {
+
+const mutationKey = ['postApiAuthSignUp'];
+const {mutation: mutationOptions, axios: axiosOptions} = options ?
+      options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey ?
+      options
+      : {...options, mutation: {...options.mutation, mutationKey}}
+      : {mutation: { mutationKey, }, axios: undefined};
+
+      
+
+
+      const mutationFn: MutationFunction<Awaited<ReturnType<typeof postApiAuthSignUp>>, {data: PostApiAuthSignUpBody}> = (props) => {
+          const {data} = props ?? {};
+
+          return  postApiAuthSignUp(data,axiosOptions)
+        }
+
+        
+
+
+  return  { mutationFn, ...mutationOptions }}
+
+    export type PostApiAuthSignUpMutationResult = NonNullable<Awaited<ReturnType<typeof postApiAuthSignUp>>>
+    export type PostApiAuthSignUpMutationBody = PostApiAuthSignUpBody
+    export type PostApiAuthSignUpMutationError = AxiosError<PostApiAuthSignUp422>
+
+    export const usePostApiAuthSignUp = <TError = AxiosError<PostApiAuthSignUp422>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof postApiAuthSignUp>>, TError,{data: PostApiAuthSignUpBody}, TContext>, axios?: AxiosRequestConfig}
+ , queryClient?: QueryClient): UseMutationResult<
+        Awaited<ReturnType<typeof postApiAuthSignUp>>,
+        TError,
+        {data: PostApiAuthSignUpBody},
+        TContext
+      > => {
+
+      const mutationOptions = getPostApiAuthSignUpMutationOptions(options);
+
+      return useMutation(mutationOptions, queryClient);
+    }
+    
+export const postApiAuthSignIn = (
+    postApiAuthSignInBody: PostApiAuthSignInBody, options?: AxiosRequestConfig
+ ): Promise<AxiosResponse<PostApiAuthSignIn201>> => {
+    
+    
+    return axios.post(
+      `http://localhost:3000/api/auth/sign-in`,
+      postApiAuthSignInBody,options
+    );
+  }
+
+
+
+export const getPostApiAuthSignInMutationOptions = <TError = AxiosError<PostApiAuthSignIn401>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof postApiAuthSignIn>>, TError,{data: PostApiAuthSignInBody}, TContext>, axios?: AxiosRequestConfig}
+): UseMutationOptions<Awaited<ReturnType<typeof postApiAuthSignIn>>, TError,{data: PostApiAuthSignInBody}, TContext> => {
+
+const mutationKey = ['postApiAuthSignIn'];
+const {mutation: mutationOptions, axios: axiosOptions} = options ?
+      options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey ?
+      options
+      : {...options, mutation: {...options.mutation, mutationKey}}
+      : {mutation: { mutationKey, }, axios: undefined};
+
+      
+
+
+      const mutationFn: MutationFunction<Awaited<ReturnType<typeof postApiAuthSignIn>>, {data: PostApiAuthSignInBody}> = (props) => {
+          const {data} = props ?? {};
+
+          return  postApiAuthSignIn(data,axiosOptions)
+        }
+
+        
+
+
+  return  { mutationFn, ...mutationOptions }}
+
+    export type PostApiAuthSignInMutationResult = NonNullable<Awaited<ReturnType<typeof postApiAuthSignIn>>>
+    export type PostApiAuthSignInMutationBody = PostApiAuthSignInBody
+    export type PostApiAuthSignInMutationError = AxiosError<PostApiAuthSignIn401>
+
+    export const usePostApiAuthSignIn = <TError = AxiosError<PostApiAuthSignIn401>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof postApiAuthSignIn>>, TError,{data: PostApiAuthSignInBody}, TContext>, axios?: AxiosRequestConfig}
+ , queryClient?: QueryClient): UseMutationResult<
+        Awaited<ReturnType<typeof postApiAuthSignIn>>,
+        TError,
+        {data: PostApiAuthSignInBody},
+        TContext
+      > => {
+
+      const mutationOptions = getPostApiAuthSignInMutationOptions(options);
+
+      return useMutation(mutationOptions, queryClient);
+    }
+    
+export const postApiAuthSignOut = (
+     options?: AxiosRequestConfig
+ ): Promise<AxiosResponse<PostApiAuthSignOut200>> => {
+    
+    
+    return axios.post(
+      `http://localhost:3000/api/auth/sign-out`,undefined,options
+    );
+  }
+
+
+
+export const getPostApiAuthSignOutMutationOptions = <TError = AxiosError<unknown>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof postApiAuthSignOut>>, TError,void, TContext>, axios?: AxiosRequestConfig}
+): UseMutationOptions<Awaited<ReturnType<typeof postApiAuthSignOut>>, TError,void, TContext> => {
+
+const mutationKey = ['postApiAuthSignOut'];
+const {mutation: mutationOptions, axios: axiosOptions} = options ?
+      options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey ?
+      options
+      : {...options, mutation: {...options.mutation, mutationKey}}
+      : {mutation: { mutationKey, }, axios: undefined};
+
+      
+
+
+      const mutationFn: MutationFunction<Awaited<ReturnType<typeof postApiAuthSignOut>>, void> = () => {
+          
+
+          return  postApiAuthSignOut(axiosOptions)
+        }
+
+        
+
+
+  return  { mutationFn, ...mutationOptions }}
+
+    export type PostApiAuthSignOutMutationResult = NonNullable<Awaited<ReturnType<typeof postApiAuthSignOut>>>
+    
+    export type PostApiAuthSignOutMutationError = AxiosError<unknown>
+
+    export const usePostApiAuthSignOut = <TError = AxiosError<unknown>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof postApiAuthSignOut>>, TError,void, TContext>, axios?: AxiosRequestConfig}
+ , queryClient?: QueryClient): UseMutationResult<
+        Awaited<ReturnType<typeof postApiAuthSignOut>>,
+        TError,
+        void,
+        TContext
+      > => {
+
+      const mutationOptions = getPostApiAuthSignOutMutationOptions(options);
+
+      return useMutation(mutationOptions, queryClient);
+    }
+    
+export const getApiAccount = (
+     options?: AxiosRequestConfig
+ ): Promise<AxiosResponse<GetApiAccount200>> => {
+    
+    
+    return axios.get(
+      `http://localhost:3000/api/account`,options
+    );
+  }
+
+
+
+
+export const getGetApiAccountQueryKey = () => {
+    return [
+    `http://localhost:3000/api/account`
+    ] as const;
+    }
+
+    
+export const getGetApiAccountQueryOptions = <TData = Awaited<ReturnType<typeof getApiAccount>>, TError = AxiosError<GetApiAccount401 | GetApiAccount404>>( options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiAccount>>, TError, TData>>, axios?: AxiosRequestConfig}
+) => {
+
+const {query: queryOptions, axios: axiosOptions} = options ?? {};
+
+  const queryKey =  queryOptions?.queryKey ?? getGetApiAccountQueryKey();
+
+  
+
+    const queryFn: QueryFunction<Awaited<ReturnType<typeof getApiAccount>>> = ({ signal }) => getApiAccount({ signal, ...axiosOptions });
+
+      
+
+      
+
+   return  { queryKey, queryFn, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof getApiAccount>>, TError, TData> & { queryKey: DataTag<QueryKey, TData, TError> }
+}
+
+export type GetApiAccountQueryResult = NonNullable<Awaited<ReturnType<typeof getApiAccount>>>
+export type GetApiAccountQueryError = AxiosError<GetApiAccount401 | GetApiAccount404>
+
+
+export function useGetApiAccount<TData = Awaited<ReturnType<typeof getApiAccount>>, TError = AxiosError<GetApiAccount401 | GetApiAccount404>>(
+  options: { query:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiAccount>>, TError, TData>> & Pick<
+        DefinedInitialDataOptions<
+          Awaited<ReturnType<typeof getApiAccount>>,
+          TError,
+          Awaited<ReturnType<typeof getApiAccount>>
+        > , 'initialData'
+      >, axios?: AxiosRequestConfig}
+ , queryClient?: QueryClient
+  ):  DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
+export function useGetApiAccount<TData = Awaited<ReturnType<typeof getApiAccount>>, TError = AxiosError<GetApiAccount401 | GetApiAccount404>>(
+  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiAccount>>, TError, TData>> & Pick<
+        UndefinedInitialDataOptions<
+          Awaited<ReturnType<typeof getApiAccount>>,
+          TError,
+          Awaited<ReturnType<typeof getApiAccount>>
+        > , 'initialData'
+      >, axios?: AxiosRequestConfig}
+ , queryClient?: QueryClient
+  ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
+export function useGetApiAccount<TData = Awaited<ReturnType<typeof getApiAccount>>, TError = AxiosError<GetApiAccount401 | GetApiAccount404>>(
+  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiAccount>>, TError, TData>>, axios?: AxiosRequestConfig}
+ , queryClient?: QueryClient
+  ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
+
+export function useGetApiAccount<TData = Awaited<ReturnType<typeof getApiAccount>>, TError = AxiosError<GetApiAccount401 | GetApiAccount404>>(
+  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiAccount>>, TError, TData>>, axios?: AxiosRequestConfig}
+ , queryClient?: QueryClient 
+ ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
+
+  const queryOptions = getGetApiAccountQueryOptions(options)
 
   const query = useQuery(queryOptions, queryClient) as  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 

@@ -9,12 +9,108 @@ export type GetApi200 = {
   message: string;
 };
 
-export type GetApiUsers200ItemName = string | null;
-
 export type GetApiUsers200Item = {
-  id: number;
-  name: GetApiUsers200ItemName;
+  id: string;
+  name: string;
   email: string;
+};
+
+export type PostApiAuthSignUpBody = {
+  /**
+   * @minLength 1
+   * @maxLength 100
+   */
+  name: string;
+  email: string;
+  /**
+   * @minLength 8
+   * @maxLength 100
+   */
+  password: string;
+};
+
+export type PostApiAuthSignUp201Token = string | null;
+
+export type PostApiAuthSignUp201UserImage = string | null;
+
+export type PostApiAuthSignUp201User = {
+  id: string;
+  name: string;
+  email: string;
+  emailVerified: boolean;
+  image?: PostApiAuthSignUp201UserImage;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type PostApiAuthSignUp201 = {
+  token: PostApiAuthSignUp201Token;
+  user: PostApiAuthSignUp201User;
+};
+
+export type PostApiAuthSignUp422 = {
+  code?: string;
+  message?: string;
+};
+
+export type PostApiAuthSignInBody = {
+  email: string;
+  /**
+   * @minLength 8
+   * @maxLength 100
+   */
+  password: string;
+};
+
+export type PostApiAuthSignIn201Redirect = boolean | null;
+
+export type PostApiAuthSignIn201Token = string | null;
+
+export type PostApiAuthSignIn201UserImage = string | null;
+
+export type PostApiAuthSignIn201User = {
+  id: string;
+  name: string;
+  email: string;
+  emailVerified: boolean;
+  image?: PostApiAuthSignIn201UserImage;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type PostApiAuthSignIn201 = {
+  redirect: PostApiAuthSignIn201Redirect;
+  token: PostApiAuthSignIn201Token;
+  user: PostApiAuthSignIn201User;
+};
+
+export type PostApiAuthSignIn401 = {
+  code?: string;
+  message?: string;
+};
+
+export type PostApiAuthSignOut200 = {
+  success: boolean;
+};
+
+export type GetApiAccount200Image = string | null;
+
+export type GetApiAccount200 = {
+  id: string;
+  name: string;
+  email: string;
+  emailVerified: boolean;
+  image: GetApiAccount200Image;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type GetApiAccount401 = {
+  message: string;
+};
+
+export type GetApiAccount404 = {
+  message: string;
 };
 
 export type getApiResponse200 = {
@@ -91,4 +187,188 @@ export const getApiUsers = async ( options?: RequestInit): Promise<getApiUsersRe
   
   const data: getApiUsersResponse['data'] = body ? JSON.parse(body) : {}
   return { data, status: res.status, headers: res.headers } as getApiUsersResponse
+}
+
+
+
+export type postApiAuthSignUpResponse201 = {
+  data: PostApiAuthSignUp201
+  status: 201
+}
+
+export type postApiAuthSignUpResponse422 = {
+  data: PostApiAuthSignUp422
+  status: 422
+}
+    
+export type postApiAuthSignUpResponseSuccess = (postApiAuthSignUpResponse201) & {
+  headers: Headers;
+};
+export type postApiAuthSignUpResponseError = (postApiAuthSignUpResponse422) & {
+  headers: Headers;
+};
+
+export type postApiAuthSignUpResponse = (postApiAuthSignUpResponseSuccess | postApiAuthSignUpResponseError)
+
+export const getPostApiAuthSignUpUrl = () => {
+
+
+  
+
+  return `http://localhost:3000/api/auth/sign-up`
+}
+
+export const postApiAuthSignUp = async (postApiAuthSignUpBody: PostApiAuthSignUpBody, options?: RequestInit): Promise<postApiAuthSignUpResponse> => {
+  
+  const res = await fetch(getPostApiAuthSignUpUrl(),
+  {      
+    ...options,
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...options?.headers },
+    body: JSON.stringify(
+      postApiAuthSignUpBody,)
+  }
+)
+
+  const body = [204, 205, 304].includes(res.status) ? null : await res.text();
+  
+  const data: postApiAuthSignUpResponse['data'] = body ? JSON.parse(body) : {}
+  return { data, status: res.status, headers: res.headers } as postApiAuthSignUpResponse
+}
+
+
+
+export type postApiAuthSignInResponse201 = {
+  data: PostApiAuthSignIn201
+  status: 201
+}
+
+export type postApiAuthSignInResponse401 = {
+  data: PostApiAuthSignIn401
+  status: 401
+}
+    
+export type postApiAuthSignInResponseSuccess = (postApiAuthSignInResponse201) & {
+  headers: Headers;
+};
+export type postApiAuthSignInResponseError = (postApiAuthSignInResponse401) & {
+  headers: Headers;
+};
+
+export type postApiAuthSignInResponse = (postApiAuthSignInResponseSuccess | postApiAuthSignInResponseError)
+
+export const getPostApiAuthSignInUrl = () => {
+
+
+  
+
+  return `http://localhost:3000/api/auth/sign-in`
+}
+
+export const postApiAuthSignIn = async (postApiAuthSignInBody: PostApiAuthSignInBody, options?: RequestInit): Promise<postApiAuthSignInResponse> => {
+  
+  const res = await fetch(getPostApiAuthSignInUrl(),
+  {      
+    ...options,
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...options?.headers },
+    body: JSON.stringify(
+      postApiAuthSignInBody,)
+  }
+)
+
+  const body = [204, 205, 304].includes(res.status) ? null : await res.text();
+  
+  const data: postApiAuthSignInResponse['data'] = body ? JSON.parse(body) : {}
+  return { data, status: res.status, headers: res.headers } as postApiAuthSignInResponse
+}
+
+
+
+export type postApiAuthSignOutResponse200 = {
+  data: PostApiAuthSignOut200
+  status: 200
+}
+    
+export type postApiAuthSignOutResponseSuccess = (postApiAuthSignOutResponse200) & {
+  headers: Headers;
+};
+;
+
+export type postApiAuthSignOutResponse = (postApiAuthSignOutResponseSuccess)
+
+export const getPostApiAuthSignOutUrl = () => {
+
+
+  
+
+  return `http://localhost:3000/api/auth/sign-out`
+}
+
+export const postApiAuthSignOut = async ( options?: RequestInit): Promise<postApiAuthSignOutResponse> => {
+  
+  const res = await fetch(getPostApiAuthSignOutUrl(),
+  {      
+    ...options,
+    method: 'POST'
+    
+    
+  }
+)
+
+  const body = [204, 205, 304].includes(res.status) ? null : await res.text();
+  
+  const data: postApiAuthSignOutResponse['data'] = body ? JSON.parse(body) : {}
+  return { data, status: res.status, headers: res.headers } as postApiAuthSignOutResponse
+}
+
+
+
+export type getApiAccountResponse200 = {
+  data: GetApiAccount200
+  status: 200
+}
+
+export type getApiAccountResponse401 = {
+  data: GetApiAccount401
+  status: 401
+}
+
+export type getApiAccountResponse404 = {
+  data: GetApiAccount404
+  status: 404
+}
+    
+export type getApiAccountResponseSuccess = (getApiAccountResponse200) & {
+  headers: Headers;
+};
+export type getApiAccountResponseError = (getApiAccountResponse401 | getApiAccountResponse404) & {
+  headers: Headers;
+};
+
+export type getApiAccountResponse = (getApiAccountResponseSuccess | getApiAccountResponseError)
+
+export const getGetApiAccountUrl = () => {
+
+
+  
+
+  return `http://localhost:3000/api/account`
+}
+
+export const getApiAccount = async ( options?: RequestInit): Promise<getApiAccountResponse> => {
+  
+  const res = await fetch(getGetApiAccountUrl(),
+  {      
+    ...options,
+    method: 'GET'
+    
+    
+  }
+)
+
+  const body = [204, 205, 304].includes(res.status) ? null : await res.text();
+  
+  const data: getApiAccountResponse['data'] = body ? JSON.parse(body) : {}
+  return { data, status: res.status, headers: res.headers } as getApiAccountResponse
 }
