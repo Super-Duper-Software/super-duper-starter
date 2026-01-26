@@ -93,23 +93,23 @@ export type PostApiAuthSignOut200 = {
   success: boolean;
 };
 
-export type GetApiAccount200Image = string | null;
+export type GetAccount200Image = string | null;
 
-export type GetApiAccount200 = {
+export type GetAccount200 = {
   id: string;
   name: string;
   email: string;
   emailVerified: boolean;
-  image: GetApiAccount200Image;
+  image: GetAccount200Image;
   createdAt: string;
   updatedAt: string;
 };
 
-export type GetApiAccount401 = {
+export type GetAccount401 = {
   message: string;
 };
 
-export type GetApiAccount404 = {
+export type GetAccount404 = {
   message: string;
 };
 
@@ -324,31 +324,31 @@ export const postApiAuthSignOut = async ( options?: RequestInit): Promise<postAp
 
 
 
-export type getApiAccountResponse200 = {
-  data: GetApiAccount200
+export type getAccountResponse200 = {
+  data: GetAccount200
   status: 200
 }
 
-export type getApiAccountResponse401 = {
-  data: GetApiAccount401
+export type getAccountResponse401 = {
+  data: GetAccount401
   status: 401
 }
 
-export type getApiAccountResponse404 = {
-  data: GetApiAccount404
+export type getAccountResponse404 = {
+  data: GetAccount404
   status: 404
 }
     
-export type getApiAccountResponseSuccess = (getApiAccountResponse200) & {
+export type getAccountResponseSuccess = (getAccountResponse200) & {
   headers: Headers;
 };
-export type getApiAccountResponseError = (getApiAccountResponse401 | getApiAccountResponse404) & {
+export type getAccountResponseError = (getAccountResponse401 | getAccountResponse404) & {
   headers: Headers;
 };
 
-export type getApiAccountResponse = (getApiAccountResponseSuccess | getApiAccountResponseError)
+export type getAccountResponse = (getAccountResponseSuccess | getAccountResponseError)
 
-export const getGetApiAccountUrl = () => {
+export const getGetAccountUrl = () => {
 
 
   
@@ -356,9 +356,9 @@ export const getGetApiAccountUrl = () => {
   return `http://localhost:3000/api/account`
 }
 
-export const getApiAccount = async ( options?: RequestInit): Promise<getApiAccountResponse> => {
+export const getAccount = async ( options?: RequestInit): Promise<getAccountResponse> => {
   
-  const res = await fetch(getGetApiAccountUrl(),
+  const res = await fetch(getGetAccountUrl(),
   {      
     ...options,
     method: 'GET'
@@ -369,6 +369,6 @@ export const getApiAccount = async ( options?: RequestInit): Promise<getApiAccou
 
   const body = [204, 205, 304].includes(res.status) ? null : await res.text();
   
-  const data: getApiAccountResponse['data'] = body ? JSON.parse(body) : {}
-  return { data, status: res.status, headers: res.headers } as getApiAccountResponse
+  const data: getAccountResponse['data'] = body ? JSON.parse(body) : {}
+  return { data, status: res.status, headers: res.headers } as getAccountResponse
 }

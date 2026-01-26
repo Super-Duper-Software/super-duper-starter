@@ -11,15 +11,18 @@ import { TextField } from "@superdupersoftware/ui/TextField";
 import { Controller, useForm } from "react-hook-form";
 import "./sign-up.css";
 import { usePostApiAuthSignUp } from "@superdupersoftware/api-client/generated/query";
+import { useRouter } from "next/navigation";
 
 export default function SignUp() {
+  const router = useRouter();
   const { mutate, isPending } = usePostApiAuthSignUp({
     mutation: {
-      onSuccess: (data) => {
-        console.log("Sign up successful:", data);
+      onSuccess: () => {
+        router.push("/dashboard");
       },
       onError: (error) => {
         if (error.isAxiosError) {
+          // TODO: proper error message
           alert("API error during sign up:" + error.response?.data.message);
         }
       },

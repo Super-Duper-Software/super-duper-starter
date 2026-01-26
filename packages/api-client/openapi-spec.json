@@ -328,6 +328,7 @@
     },
     "/api/account": {
       "get": {
+        "operationId": "getAccount",
         "responses": {
           "200": {
             "description": "Account information",

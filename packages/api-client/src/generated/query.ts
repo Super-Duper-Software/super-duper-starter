@@ -119,23 +119,23 @@ export type PostApiAuthSignOut200 = {
   success: boolean;
 };
 
-export type GetApiAccount200Image = string | null;
+export type GetAccount200Image = string | null;
 
-export type GetApiAccount200 = {
+export type GetAccount200 = {
   id: string;
   name: string;
   email: string;
   emailVerified: boolean;
-  image: GetApiAccount200Image;
+  image: GetAccount200Image;
   createdAt: string;
   updatedAt: string;
 };
 
-export type GetApiAccount401 = {
+export type GetAccount401 = {
   message: string;
 };
 
-export type GetApiAccount404 = {
+export type GetAccount404 = {
   message: string;
 };
 
@@ -476,9 +476,9 @@ const {mutation: mutationOptions, axios: axiosOptions} = options ?
       return useMutation(mutationOptions, queryClient);
     }
     
-export const getApiAccount = (
+export const getAccount = (
      options?: AxiosRequestConfig
- ): Promise<AxiosResponse<GetApiAccount200>> => {
+ ): Promise<AxiosResponse<GetAccount200>> => {
     
     
     return axios.get(
@@ -489,66 +489,66 @@ export const getApiAccount = (
 
 
 
-export const getGetApiAccountQueryKey = () => {
+export const getGetAccountQueryKey = () => {
     return [
     `http://localhost:3000/api/account`
     ] as const;
     }
 
     
-export const getGetApiAccountQueryOptions = <TData = Awaited<ReturnType<typeof getApiAccount>>, TError = AxiosError<GetApiAccount401 | GetApiAccount404>>( options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiAccount>>, TError, TData>>, axios?: AxiosRequestConfig}
+export const getGetAccountQueryOptions = <TData = Awaited<ReturnType<typeof getAccount>>, TError = AxiosError<GetAccount401 | GetAccount404>>( options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getAccount>>, TError, TData>>, axios?: AxiosRequestConfig}
 ) => {
 
 const {query: queryOptions, axios: axiosOptions} = options ?? {};
 
-  const queryKey =  queryOptions?.queryKey ?? getGetApiAccountQueryKey();
+  const queryKey =  queryOptions?.queryKey ?? getGetAccountQueryKey();
 
   
 
-    const queryFn: QueryFunction<Awaited<ReturnType<typeof getApiAccount>>> = ({ signal }) => getApiAccount({ signal, ...axiosOptions });
+    const queryFn: QueryFunction<Awaited<ReturnType<typeof getAccount>>> = ({ signal }) => getAccount({ signal, ...axiosOptions });
 
       
 
       
 
-   return  { queryKey, queryFn, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof getApiAccount>>, TError, TData> & { queryKey: DataTag<QueryKey, TData, TError> }
+   return  { queryKey, queryFn, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof getAccount>>, TError, TData> & { queryKey: DataTag<QueryKey, TData, TError> }
 }
 
-export type GetApiAccountQueryResult = NonNullable<Awaited<ReturnType<typeof getApiAccount>>>
-export type GetApiAccountQueryError = AxiosError<GetApiAccount401 | GetApiAccount404>
+export type GetAccountQueryResult = NonNullable<Awaited<ReturnType<typeof getAccount>>>
+export type GetAccountQueryError = AxiosError<GetAccount401 | GetAccount404>
 
 
-export function useGetApiAccount<TData = Awaited<ReturnType<typeof getApiAccount>>, TError = AxiosError<GetApiAccount401 | GetApiAccount404>>(
-  options: { query:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiAccount>>, TError, TData>> & Pick<
+export function useGetAccount<TData = Awaited<ReturnType<typeof getAccount>>, TError = AxiosError<GetAccount401 | GetAccount404>>(
+  options: { query:Partial<UseQueryOptions<Awaited<ReturnType<typeof getAccount>>, TError, TData>> & Pick<
         DefinedInitialDataOptions<
-          Awaited<ReturnType<typeof getApiAccount>>,
+          Awaited<ReturnType<typeof getAccount>>,
           TError,
-          Awaited<ReturnType<typeof getApiAccount>>
+          Awaited<ReturnType<typeof getAccount>>
         > , 'initialData'
       >, axios?: AxiosRequestConfig}
  , queryClient?: QueryClient
   ):  DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useGetApiAccount<TData = Awaited<ReturnType<typeof getApiAccount>>, TError = AxiosError<GetApiAccount401 | GetApiAccount404>>(
-  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiAccount>>, TError, TData>> & Pick<
+export function useGetAccount<TData = Awaited<ReturnType<typeof getAccount>>, TError = AxiosError<GetAccount401 | GetAccount404>>(
+  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getAccount>>, TError, TData>> & Pick<
         UndefinedInitialDataOptions<
-          Awaited<ReturnType<typeof getApiAccount>>,
+          Awaited<ReturnType<typeof getAccount>>,
           TError,
-          Awaited<ReturnType<typeof getApiAccount>>
+          Awaited<ReturnType<typeof getAccount>>
         > , 'initialData'
       >, axios?: AxiosRequestConfig}
  , queryClient?: QueryClient
   ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useGetApiAccount<TData = Awaited<ReturnType<typeof getApiAccount>>, TError = AxiosError<GetApiAccount401 | GetApiAccount404>>(
-  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiAccount>>, TError, TData>>, axios?: AxiosRequestConfig}
+export function useGetAccount<TData = Awaited<ReturnType<typeof getAccount>>, TError = AxiosError<GetAccount401 | GetAccount404>>(
+  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getAccount>>, TError, TData>>, axios?: AxiosRequestConfig}
  , queryClient?: QueryClient
   ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
 
-export function useGetApiAccount<TData = Awaited<ReturnType<typeof getApiAccount>>, TError = AxiosError<GetApiAccount401 | GetApiAccount404>>(
-  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiAccount>>, TError, TData>>, axios?: AxiosRequestConfig}
+export function useGetAccount<TData = Awaited<ReturnType<typeof getAccount>>, TError = AxiosError<GetAccount401 | GetAccount404>>(
+  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getAccount>>, TError, TData>>, axios?: AxiosRequestConfig}
  , queryClient?: QueryClient 
  ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
 
-  const queryOptions = getGetApiAccountQueryOptions(options)
+  const queryOptions = getGetAccountQueryOptions(options)
 
   const query = useQuery(queryOptions, queryClient) as  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
 

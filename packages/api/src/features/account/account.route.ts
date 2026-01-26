@@ -7,6 +7,7 @@ export const accountRoute = createRoute({
   method: "get",
   path: "/account",
   middleware: [sessionMiddleware],
+  operationId: "getAccount",
   responses: {
     200: {
       description: "Account information",
