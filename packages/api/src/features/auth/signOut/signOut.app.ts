@@ -1,4 +1,4 @@
-import { auth } from "@superdupersoftware/auth";
+import { auth } from "@superdupersoftware/auth/server";
 import { createHono } from "../../../hono";
 import { signOutRoute } from "./signOut.route";
 

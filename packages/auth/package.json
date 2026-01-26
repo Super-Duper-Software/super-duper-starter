@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    ".": "./src/lib/auth.ts"
+    "./server": "./src/lib/auth.ts",
+    "./client": "./src/lib/auth-client.ts"
   },
   "scripts": {
     "typecheck": "tsc --noEmit"

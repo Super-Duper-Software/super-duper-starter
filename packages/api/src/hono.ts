@@ -1,5 +1,5 @@
 import { OpenAPIHono } from "@hono/zod-openapi";
-import type { auth } from "@superdupersoftware/auth";
+import type { auth } from "@superdupersoftware/auth/server";
 
 export const createHono = () =>
   new OpenAPIHono<{

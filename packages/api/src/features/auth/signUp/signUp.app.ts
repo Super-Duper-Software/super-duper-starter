@@ -1,4 +1,4 @@
-import { APIError, auth } from "@superdupersoftware/auth";
+import { APIError, auth } from "@superdupersoftware/auth/server";
 import { createHono } from "../../../hono";
 import { signUpRoute } from "./signUp.route";
 

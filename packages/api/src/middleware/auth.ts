@@ -1,4 +1,4 @@
-import { auth } from "@superdupersoftware/auth";
+import { auth } from "@superdupersoftware/auth/server";
 import { createMiddleware } from "hono/factory";
 
 export const sessionMiddleware = createMiddleware(async (c, next) => {
