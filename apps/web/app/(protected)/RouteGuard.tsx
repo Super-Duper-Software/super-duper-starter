@@ -26,7 +26,7 @@ export default function RouteGuard({
       case "success":
         break;
     }
-  }, [status, router.push]);
+  }, [status, router]);
 
   if (status === "pending") {
     // TODO sup-28: replace with loading spinner
