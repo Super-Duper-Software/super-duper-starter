@@ -21,6 +21,5 @@ export const accountRoute = createRoute({
       description: "Unauthorized",
       ...errorResponseDefaults,
     },
-
   },
 });
