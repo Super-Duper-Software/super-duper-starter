@@ -140,13 +140,13 @@ importers:
 
   packages/auth:
     dependencies:
+      '@superdupersoftware/db':
+        specifier: workspace:*
+        version: link:../db
       better-auth:
         specifier: ^1.4.17
         version: 1.4.17(@prisma/client@7.3.0(prisma@7.3.0(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(typescript@5.9.2))(typescript@5.9.2))(mysql2@3.15.3)(next@16.1.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(pg@8.17.2)(prisma@7.3.0(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(typescript@5.9.2))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
     devDependencies:
-      '@superdupersoftware/db':
-        specifier: workspace:*
-        version: link:../db
       '@superdupersoftware/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
@@ -221,9 +221,6 @@ importers:
 
   packages/logger:
     dependencies:
-      hono:
-        specifier: ^4.7.0
-        version: 4.11.4
       pino:
         specifier: ^10.3.0
         version: 10.3.0
