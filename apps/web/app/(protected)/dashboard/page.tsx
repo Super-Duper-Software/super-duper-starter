@@ -23,6 +23,7 @@ export default function DashboardPage() {
   });
 
   if (isLoading || isError) {
+    // TODO sup-28: replace with loading spinner
     return <div>Loading...</div>;
   }
 
