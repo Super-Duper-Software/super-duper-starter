@@ -74,7 +74,7 @@ app.onError((err, c) => {
   if (err instanceof HTTPException) {
     return c.json({ message: err.message }, err.status);
   }
-  // TODO: replace with logger w/ stack trace
+  // TODO sup-19: replace with logger w/ stack trace
   console.error(`[UNHANDLED EXCEPTION] ${err.message}`);
   return c.json({ message: "Internal Server Error" }, 500);
 });
