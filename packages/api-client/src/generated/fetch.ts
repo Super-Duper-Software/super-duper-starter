@@ -109,10 +109,6 @@ export type GetAccount401 = {
   message: string;
 };
 
-export type GetAccount404 = {
-  message: string;
-};
-
 export type getApiResponse200 = {
   data: GetApi200
   status: 200
@@ -333,16 +329,11 @@ export type getAccountResponse401 = {
   data: GetAccount401
   status: 401
 }
-
-export type getAccountResponse404 = {
-  data: GetAccount404
-  status: 404
-}
     
 export type getAccountResponseSuccess = (getAccountResponse200) & {
   headers: Headers;
 };
-export type getAccountResponseError = (getAccountResponse401 | getAccountResponse404) & {
+export type getAccountResponseError = (getAccountResponse401) & {
   headers: Headers;
 };
 
