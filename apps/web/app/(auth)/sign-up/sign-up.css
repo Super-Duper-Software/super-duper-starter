@@ -6,6 +6,11 @@
   max-width: 20rem;
 }
 
+.sign-up-title {
+  text-align: center;
+  color: var(--text-color);
+}
+
 .sign-up-submit {
   align-self: flex-end;
 }
