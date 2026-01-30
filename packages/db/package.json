@@ -9,7 +9,7 @@
     "typecheck": "tsc --noEmit",
     "prisma": "prisma",
     "generate": "prisma generate",
-    "migrate": "prisma migrate dev --skip-generate",
+    "migrate": "prisma migrate dev",
     "deploy": "prisma migrate deploy",
     "dev": "docker compose up",
     "seed": "tsx prisma/seed/index.ts"

@@ -10,6 +10,7 @@
     "typecheck": "next typegen && tsc --noEmit"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
     "@superdupersoftware/api": "workspace:*",
     "@superdupersoftware/api-client": "workspace:*",
     "@superdupersoftware/ui": "workspace:*",
@@ -17,7 +18,8 @@
     "hono": "^4.11.4",
     "next": "16.1.0",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "react-hook-form": "^7.71.1"
   },
   "devDependencies": {
     "@superdupersoftware/typescript-config": "workspace:*",

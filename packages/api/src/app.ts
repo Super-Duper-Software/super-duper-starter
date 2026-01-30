@@ -1,6 +1,10 @@
-import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
+import { createRoute, z } from "@hono/zod-openapi";
 import { Scalar } from "@scalar/hono-api-reference";
 import { prisma, UserResultSchema } from "@superdupersoftware/db";
+import { HTTPException } from "hono/http-exception";
+import { accountApp } from "./features/account/account.app";
+import { authApp } from "./features/auth/auth.app";
+import { createHono } from "./hono";
 
 type OpenAPIObjectConfig = Parameters<typeof app.getOpenAPI31Document>[0];
 
@@ -44,9 +48,7 @@ const userRoute = createRoute({
   },
 });
 
-const app = new OpenAPIHono({
-  strict: true,
-}).basePath("/api");
+const app = createHono().basePath("/api");
 
 app.openapi(route, (c) =>
   c.json({
@@ -63,6 +65,18 @@ app.openapi(userRoute, async (c) => {
     },
   });
   return c.json(users, 200);
+});
+
+app.route("/", authApp);
+app.route("/", accountApp);
+
+app.onError((err, c) => {
+  if (err instanceof HTTPException) {
+    return c.json({ message: err.message }, err.status);
+  }
+  // TODO sup-19: replace with logger w/ stack trace
+  console.error(`[UNHANDLED EXCEPTION] ${err.message}`);
+  return c.json({ message: "Internal Server Error" }, 500);
 });
 
 export const openAPIConfig: OpenAPIObjectConfig = {

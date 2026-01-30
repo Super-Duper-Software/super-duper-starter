@@ -1,0 +1,22 @@
+{
+  "name": "@superdupersoftware/auth",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./server": "./src/lib/auth.ts",
+    "./client": "./src/lib/auth-client.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@superdupersoftware/typescript-config": "workspace:*",
+    "@superdupersoftware/db": "workspace:*",
+    "@types/node": "^22.15.3",
+    "tsx": "^4.21.0",
+    "typescript": "5.9.2"
+  },
+  "dependencies": {
+    "better-auth": "^1.4.17"
+  }
+}
