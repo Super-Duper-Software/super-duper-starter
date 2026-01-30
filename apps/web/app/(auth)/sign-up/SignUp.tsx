@@ -23,7 +23,6 @@ export default function SignUp() {
       },
       onError: (error) => {
         if (error.isAxiosError) {
-          // TODO: proper error message
           toast.error(error.response?.data.message, {
             position: "bottom-center",
           });
