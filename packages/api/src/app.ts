@@ -2,9 +2,11 @@ import { createRoute, z } from "@hono/zod-openapi";
 import { Scalar } from "@scalar/hono-api-reference";
 import { prisma, UserResultSchema } from "@superdupersoftware/db";
 import { HTTPException } from "hono/http-exception";
+import { requestId } from "hono/request-id";
 import { accountApp } from "./features/account/account.app";
 import { authApp } from "./features/auth/auth.app";
 import { createHono } from "./hono";
+import { loggerMiddleware } from "./middleware/logger";
 
 type OpenAPIObjectConfig = Parameters<typeof app.getOpenAPI31Document>[0];
 
@@ -50,6 +52,9 @@ const userRoute = createRoute({
 
 const app = createHono().basePath("/api");
 
+app.use(requestId());
+app.use(loggerMiddleware());
+
 app.openapi(route, (c) =>
   c.json({
     message: "Up and running!",
@@ -72,10 +77,10 @@ app.route("/", accountApp);
 
 app.onError((err, c) => {
   if (err instanceof HTTPException) {
+    c.var.logger?.warn(err, "Unhandled HTTP error occurred");
     return c.json({ message: err.message }, err.status);
   }
-  // TODO sup-19: replace with logger w/ stack trace
-  console.error(`[UNHANDLED EXCEPTION] ${err.message}`);
+  c.var.logger?.error(err, "Unhandled server error occurred");
   return c.json({ message: "Internal Server Error" }, 500);
 });
 

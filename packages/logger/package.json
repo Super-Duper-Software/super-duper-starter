@@ -1,21 +1,19 @@
 {
-  "name": "@superdupersoftware/auth",
+  "name": "@superdupersoftware/logger",
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./server": "./src/lib/auth.ts"
+    ".": "./src/index.ts"
   },
   "scripts": {
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@superdupersoftware/typescript-config": "workspace:*",
-    "@types/node": "^22.15.3",
-    "tsx": "^4.21.0",
-    "typescript": "5.9.2"
+    "@types/node": "^22.15.3"
   },
   "dependencies": {
-    "@superdupersoftware/db": "workspace:*",
-    "better-auth": "^1.4.17"
+    "pino": "^10.3.0",
+    "pino-pretty": "^13.1.3"
   }
 }

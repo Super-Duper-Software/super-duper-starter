@@ -15,10 +15,12 @@
     "typescript": "5.9.2"
   },
   "dependencies": {
-    "@superdupersoftware/db": "workspace:*",
-    "@superdupersoftware/auth": "workspace:*",
+    "@hono/node-server": "^1.19.9",
     "@hono/zod-openapi": "^1.2.0",
     "@scalar/hono-api-reference": "^0.9.35",
+    "@superdupersoftware/auth": "workspace:*",
+    "@superdupersoftware/db": "workspace:*",
+    "@superdupersoftware/logger": "workspace:*",
     "hono": "^4.11.4",
     "tsx": "^4.21.0"
   }
