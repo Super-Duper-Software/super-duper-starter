@@ -11,6 +11,7 @@ import { TextField } from "@superdupersoftware/ui/TextField";
 import { Controller, useForm } from "react-hook-form";
 import "./sign-up.css";
 import { usePostApiAuthSignUp } from "@superdupersoftware/api-client/generated/query";
+import { toast } from "@superdupersoftware/ui/Toast";
 import { useRouter } from "next/navigation";
 
 export default function SignUp() {
@@ -23,7 +24,9 @@ export default function SignUp() {
       onError: (error) => {
         if (error.isAxiosError) {
           // TODO: proper error message
-          alert("API error during sign up:" + error.response?.data.message);
+          toast.error(error.response?.data.message, {
+            position: "bottom-center",
+          });
         }
       },
     },
