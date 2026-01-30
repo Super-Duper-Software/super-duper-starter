@@ -21,9 +21,5 @@ export const accountRoute = createRoute({
       description: "Unauthorized",
       ...errorResponseDefaults,
     },
-    404: {
-      description: "User not found",
-      ...errorResponseDefaults,
-    },
   },
 });

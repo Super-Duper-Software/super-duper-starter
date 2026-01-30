@@ -135,10 +135,6 @@ export type GetAccount401 = {
   message: string;
 };
 
-export type GetAccount404 = {
-  message: string;
-};
-
 export const getApi = (
      options?: AxiosRequestConfig
  ): Promise<AxiosResponse<GetApi200>> => {
@@ -496,7 +492,7 @@ export const getGetAccountQueryKey = () => {
     }
 
     
-export const getGetAccountQueryOptions = <TData = Awaited<ReturnType<typeof getAccount>>, TError = AxiosError<GetAccount401 | GetAccount404>>( options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getAccount>>, TError, TData>>, axios?: AxiosRequestConfig}
+export const getGetAccountQueryOptions = <TData = Awaited<ReturnType<typeof getAccount>>, TError = AxiosError<GetAccount401>>( options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getAccount>>, TError, TData>>, axios?: AxiosRequestConfig}
 ) => {
 
 const {query: queryOptions, axios: axiosOptions} = options ?? {};
@@ -515,10 +511,10 @@ const {query: queryOptions, axios: axiosOptions} = options ?? {};
 }
 
 export type GetAccountQueryResult = NonNullable<Awaited<ReturnType<typeof getAccount>>>
-export type GetAccountQueryError = AxiosError<GetAccount401 | GetAccount404>
+export type GetAccountQueryError = AxiosError<GetAccount401>
 
 
-export function useGetAccount<TData = Awaited<ReturnType<typeof getAccount>>, TError = AxiosError<GetAccount401 | GetAccount404>>(
+export function useGetAccount<TData = Awaited<ReturnType<typeof getAccount>>, TError = AxiosError<GetAccount401>>(
   options: { query:Partial<UseQueryOptions<Awaited<ReturnType<typeof getAccount>>, TError, TData>> & Pick<
         DefinedInitialDataOptions<
           Awaited<ReturnType<typeof getAccount>>,
@@ -528,7 +524,7 @@ export function useGetAccount<TData = Awaited<ReturnType<typeof getAccount>>, TE
       >, axios?: AxiosRequestConfig}
  , queryClient?: QueryClient
   ):  DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useGetAccount<TData = Awaited<ReturnType<typeof getAccount>>, TError = AxiosError<GetAccount401 | GetAccount404>>(
+export function useGetAccount<TData = Awaited<ReturnType<typeof getAccount>>, TError = AxiosError<GetAccount401>>(
   options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getAccount>>, TError, TData>> & Pick<
         UndefinedInitialDataOptions<
           Awaited<ReturnType<typeof getAccount>>,
@@ -538,12 +534,12 @@ export function useGetAccount<TData = Awaited<ReturnType<typeof getAccount>>, TE
       >, axios?: AxiosRequestConfig}
  , queryClient?: QueryClient
   ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
-export function useGetAccount<TData = Awaited<ReturnType<typeof getAccount>>, TError = AxiosError<GetAccount401 | GetAccount404>>(
+export function useGetAccount<TData = Awaited<ReturnType<typeof getAccount>>, TError = AxiosError<GetAccount401>>(
   options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getAccount>>, TError, TData>>, axios?: AxiosRequestConfig}
  , queryClient?: QueryClient
   ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
 
-export function useGetAccount<TData = Awaited<ReturnType<typeof getAccount>>, TError = AxiosError<GetAccount401 | GetAccount404>>(
+export function useGetAccount<TData = Awaited<ReturnType<typeof getAccount>>, TError = AxiosError<GetAccount401>>(
   options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getAccount>>, TError, TData>>, axios?: AxiosRequestConfig}
  , queryClient?: QueryClient 
  ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {

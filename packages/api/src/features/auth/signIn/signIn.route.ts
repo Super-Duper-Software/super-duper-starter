@@ -19,7 +19,7 @@ export const signInRoute = createRoute({
   },
   responses: {
     201: {
-      description: "Sign up response",
+      description: "Sign in response",
       content: {
         "application/json": {
           schema: SignInResponseBodySchema,
@@ -27,7 +27,7 @@ export const signInRoute = createRoute({
       },
     },
     401: {
-      description: "Validation Error",
+      description: "Unauthorized",
       content: {
         "application/json": {
           schema: AuthErrorResponseSchema,
