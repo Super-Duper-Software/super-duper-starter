@@ -1,5 +1,6 @@
 import { type Logger, logger } from "@superdupersoftware/logger";
-import type { Context, MiddlewareHandler } from "hono";
+import type { MiddlewareHandler } from "hono";
+import type { Context, Env } from "../hono";
 
 export function createRequestLogger(c: Context, requestId?: string): Logger {
   return logger.child({
@@ -10,9 +11,7 @@ export function createRequestLogger(c: Context, requestId?: string): Logger {
   });
 }
 
-export function loggerMiddleware(): MiddlewareHandler<{
-  Variables: { logger: Logger; requestId?: string };
-}> {
+export function loggerMiddleware(): MiddlewareHandler<Env> {
   return async (c, next) => {
     const requestId = c.get("requestId");
     const reqLogger = createRequestLogger(c, requestId);
