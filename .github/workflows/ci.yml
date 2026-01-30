@@ -36,7 +36,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Prisma generate
-        run: pnpm turbo generate
+        run: pnpm turbo run generate
 
       - name: Run the checks
         run: pnpm turbo format-lint typecheck
