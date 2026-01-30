@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Providers from "../components/Providers";
 import "../styles/globals.css";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Super Duper Starter",
@@ -15,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Providers>
-        <body>{children}</body>
+        <body className={inter.className}>{children}</body>
       </Providers>
     </html>
   );
