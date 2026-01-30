@@ -4,7 +4,7 @@
   width: calc(var(--spacing-9) * 7);
   max-width: 100%;
   container-type: inline-size;
-  font: var(--font-size) system-ui;
+  font: var(--font-size) var(--font-primary);
   color: var(--text-color);
 
   header {

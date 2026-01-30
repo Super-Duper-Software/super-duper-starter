@@ -208,6 +208,9 @@
 
 /* typography and spacing scale */
 :root {
+  --font-primary:
+    "JetBrains Mono", BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-size: 0.875rem; /* 14px */
   --font-size-sm: 0.75rem; /* 12px */
   --font-size-lg: 1rem; /* 16px */

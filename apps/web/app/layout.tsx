@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Providers from "../components/Providers";
 import "../styles/globals.css";
 import { Toaster } from "@superdupersoftware/ui/Toast";
-import { Inter } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Super Duper Starter",
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Providers>
-        <body className={inter.className}>
+        <body className={jetBrainsMono.className}>
           <Toaster theme="system" />
           {children}
         </body>
