@@ -1,0 +1,21 @@
+{
+  "name": "@superdupersoftware/keyboard-shortcuts",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react-hotkeys-hook": "^5.2.3"
+  },
+  "devDependencies": {
+    "@superdupersoftware/typescript-config": "workspace:*",
+    "@types/node": "^22.15.3",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "typescript": "5.9.2"
+  }
+}
