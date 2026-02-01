@@ -41,9 +41,10 @@ const config = {
     );
     // Update the test pattern to include SCSS files
     rule.test = /\.(css|scss)$/;
-    // Add sass-loader before lightningcss-loader
-    rule.use.push("sass-loader");
+    // Add sass-loader at the end (processes first) and lightningcss-loader before it
+    // Loaders execute in reverse order: sass-loader -> lightningcss-loader -> css-loader -> style-loader
     rule.use.push("lightningcss-loader");
+    rule.use.push("sass-loader");
     return config;
   },
 };
