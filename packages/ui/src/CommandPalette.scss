@@ -1,4 +1,4 @@
-@import "./theme.scss";
+@use "./theme.scss";
 
 .command-palette-dialog {
   width: min(90vw, 500px);

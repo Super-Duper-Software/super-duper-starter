@@ -1,5 +1,5 @@
-@import "./theme.scss";
-@import "./utilities.scss";
+@use "./theme.scss";
+@use "./utilities.scss";
 
 .react-aria-Switch {
   display: flex;
