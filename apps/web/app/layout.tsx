@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Providers from "../components/Providers";
-import "../styles/globals.css";
+import "../styles/globals.scss";
 import { Toaster } from "@superdupersoftware/ui/Toast";
 import { JetBrains_Mono } from "next/font/google";
 

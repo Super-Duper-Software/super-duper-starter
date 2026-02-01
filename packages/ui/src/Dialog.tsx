@@ -5,7 +5,7 @@ import {
   Dialog as RACDialog,
   DialogTrigger as RACDialogTrigger,
 } from "react-aria-components";
-import "./Dialog.css";
+import "./Dialog.scss";
 
 export function Dialog(props: DialogProps) {
   return <RACDialog {...props} />;

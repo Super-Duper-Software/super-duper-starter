@@ -8,7 +8,7 @@ import {
   Breadcrumb as RACBreadcrumb,
   Breadcrumbs as RACBreadcrumbs,
 } from "react-aria-components";
-import "./Breadcrumbs.css";
+import "./Breadcrumbs.scss";
 
 export function Breadcrumbs<T extends object>(props: BreadcrumbsProps<T>) {
   return <RACBreadcrumbs {...props} />;

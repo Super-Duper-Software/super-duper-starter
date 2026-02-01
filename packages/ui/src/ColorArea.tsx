@@ -5,7 +5,7 @@ import {
 } from "react-aria-components";
 
 import { ColorThumb } from "./ColorThumb";
-import "./ColorArea.css";
+import "./ColorArea.scss";
 
 export function ColorArea(props: ColorAreaProps) {
   return (

@@ -7,7 +7,7 @@ import {
   type ToggleButtonGroupProps,
   type ToggleButtonProps,
 } from "react-aria-components";
-import "./SegmentedControl.css";
+import "./SegmentedControl.scss";
 
 export function SegmentedControl(props: ToggleButtonGroupProps) {
   return (

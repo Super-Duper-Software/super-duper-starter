@@ -4,7 +4,7 @@ import {
   type MeterProps as AriaMeterProps,
 } from "react-aria-components";
 import { Label } from "./Form";
-import "./Meter.css";
+import "./Meter.scss";
 
 export interface MeterProps extends AriaMeterProps {
   label?: string;

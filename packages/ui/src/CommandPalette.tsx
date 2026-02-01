@@ -10,7 +10,7 @@ import {
 import { Menu } from "./Menu";
 import { Modal } from "./Modal";
 import { SearchField } from "./SearchField";
-import "./CommandPalette.css";
+import "./CommandPalette.scss";
 
 export interface CommandPaletteProps<T extends object>
   extends Omit<AriaAutocompleteProps, "children">,

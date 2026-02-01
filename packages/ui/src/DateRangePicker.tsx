@@ -11,7 +11,7 @@ import { DateInput, DateSegment } from "./DateField";
 import { Description, FieldButton, FieldError, Label } from "./Form";
 import { Popover } from "./Popover";
 import { RangeCalendar } from "./RangeCalendar";
-import "./DateRangePicker.css";
+import "./DateRangePicker.scss";
 
 export interface DateRangePickerProps<T extends DateValue>
   extends AriaDateRangePickerProps<T> {

@@ -5,14 +5,14 @@ import {
   type SignUpRequestBody,
   SignUpRequestBodySchema,
 } from "@superdupersoftware/api/features/auth/signUp/signUp.schema";
+import { usePostApiAuthSignUp } from "@superdupersoftware/api-client/generated/query";
 import { Button } from "@superdupersoftware/ui/Button";
 import { Form } from "@superdupersoftware/ui/Form";
 import { TextField } from "@superdupersoftware/ui/TextField";
-import { Controller, useForm } from "react-hook-form";
-import "./sign-up.css";
-import { usePostApiAuthSignUp } from "@superdupersoftware/api-client/generated/query";
 import { toast } from "@superdupersoftware/ui/Toast";
 import { useRouter } from "next/navigation";
+import { Controller, useForm } from "react-hook-form";
+import styles from "./sign-up.module.scss";
 
 export default function SignUp() {
   const router = useRouter();
@@ -46,8 +46,8 @@ export default function SignUp() {
   };
 
   return (
-    <div className="sign-up-form">
-      <h1 className="sign-up-title">Sign Up</h1>
+    <div className={styles.signUpForm}>
+      <h1 className={styles.signUpTitle}>Sign Up</h1>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Controller
           control={control}
@@ -97,7 +97,7 @@ export default function SignUp() {
             />
           )}
         />
-        <div className="sign-up-submit">
+        <div className={styles.signUpSubmit}>
           <Button type="submit" isPending={isPending}>
             Submit
           </Button>

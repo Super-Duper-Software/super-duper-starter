@@ -1,9 +1,9 @@
-import "./layout.css";
+import styles from "./layout.module.scss";
 
 export default function AuthLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <div className="auth-layout">{children}</div>;
+  return <div className={styles.authLayout}>{children}</div>;
 }

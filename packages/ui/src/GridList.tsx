@@ -11,7 +11,7 @@ import {
 } from "react-aria-components";
 import { Checkbox } from "./Checkbox";
 import { ProgressCircle } from "./ProgressCircle";
-import "./GridList.css";
+import "./GridList.scss";
 
 export function GridList<T extends object>({
   children,

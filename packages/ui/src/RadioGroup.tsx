@@ -8,8 +8,8 @@ import {
   type ValidationResult,
 } from "react-aria-components";
 import { Description, FieldError, Label } from "./Form";
-import "./RadioGroup.css";
-import "./utilities.css";
+import "./RadioGroup.scss";
+import "./utilities.scss";
 
 export interface RadioGroupProps extends Omit<AriaRadioGroupProps, "children"> {
   children?: React.ReactNode;
