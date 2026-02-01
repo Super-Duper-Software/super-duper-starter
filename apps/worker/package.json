@@ -1,24 +1,22 @@
 {
-  "name": "@superdupersoftware/jobs",
+  "name": "worker",
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "exports": {
-    "./*": "./src/*.ts"
-  },
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "job": "tsx ./src/cli.ts"
+    "develop": "wrangler dev"
   },
   "devDependencies": {
-    "@superdupersoftware/db": "workspace:*",
     "@superdupersoftware/typescript-config": "workspace:*",
     "@types/node": "^22.15.3",
-    "cac": "^6.7.14",
-    "execa": "^9.6.1",
-    "tsx": "^4.21.0"
+    "typescript": "5.9.2",
+    "wrangler": "^4.61.1"
   },
   "dependencies": {
-    "typescript": "5.9.2"
+    "@superdupersoftware/jobs": "workspace:*",
+    "@superdupersoftware/logger": "workspace:*",
+    "hono": "^4.11.4",
+    "tsx": "^4.21.0"
   }
 }
