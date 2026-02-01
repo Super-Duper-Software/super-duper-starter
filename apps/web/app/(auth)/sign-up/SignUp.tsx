@@ -5,14 +5,14 @@ import {
   type SignUpRequestBody,
   SignUpRequestBodySchema,
 } from "@superdupersoftware/api/features/auth/signUp/signUp.schema";
+import { usePostApiAuthSignUp } from "@superdupersoftware/api-client/generated/query";
 import { Button } from "@superdupersoftware/ui/Button";
 import { Form } from "@superdupersoftware/ui/Form";
 import { TextField } from "@superdupersoftware/ui/TextField";
-import { Controller, useForm } from "react-hook-form";
-import styles from "./sign-up.module.scss";
-import { usePostApiAuthSignUp } from "@superdupersoftware/api-client/generated/query";
 import { toast } from "@superdupersoftware/ui/Toast";
 import { useRouter } from "next/navigation";
+import { Controller, useForm } from "react-hook-form";
+import styles from "./sign-up.module.scss";
 
 export default function SignUp() {
   const router = useRouter();
