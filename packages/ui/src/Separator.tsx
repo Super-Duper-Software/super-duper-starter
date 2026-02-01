@@ -3,7 +3,7 @@ import {
   Separator as RACSeparator,
   type SeparatorProps,
 } from "react-aria-components";
-import "./Separator.css";
+import "./Separator.scss";
 
 export function Separator(props: SeparatorProps) {
   return <RACSeparator {...props} />;

@@ -10,7 +10,7 @@ import {
   Label as RACLabel,
   type TextProps,
 } from "react-aria-components";
-import "./Form.css";
+import "./Form.scss";
 import { Text } from "./Content";
 
 export function Form(props: FormProps) {

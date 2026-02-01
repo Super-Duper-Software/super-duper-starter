@@ -12,7 +12,7 @@ import {
 import { Button } from "./Button";
 import { Heading, Text } from "./Content";
 
-import "./Calendar.css";
+import "./Calendar.scss";
 
 export interface CalendarProps<T extends DateValue>
   extends AriaCalendarProps<T> {

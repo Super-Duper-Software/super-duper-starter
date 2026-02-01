@@ -3,7 +3,7 @@ import {
   type DisclosureGroupProps,
   DisclosureGroup as RACDisclosureGroup,
 } from "react-aria-components";
-import "./DisclosureGroup.css";
+import "./DisclosureGroup.scss";
 
 export function DisclosureGroup(props: DisclosureGroupProps) {
   return <RACDisclosureGroup {...props} />;

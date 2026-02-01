@@ -23,7 +23,7 @@ import {
 } from "react-aria-components";
 import { Checkbox } from "./Checkbox";
 import { ProgressCircle } from "./ProgressCircle";
-import "./Table.css";
+import "./Table.scss";
 
 export function Table(props: TableProps) {
   return <AriaTable {...props} />;

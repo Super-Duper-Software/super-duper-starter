@@ -7,7 +7,7 @@ import {
 
 import { ColorThumb } from "./ColorThumb";
 
-import "./ColorWheel.css";
+import "./ColorWheel.scss";
 export interface ColorWheelProps
   extends Omit<AriaColorWheelProps, "outerRadius" | "innerRadius"> {}
 

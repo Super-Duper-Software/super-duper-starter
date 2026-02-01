@@ -13,7 +13,7 @@ import {
   type TabProps,
   type TabsProps,
 } from "react-aria-components";
-import "./Tabs.css";
+import "./Tabs.scss";
 
 export function Tabs(props: TabsProps) {
   return <RACTabs {...props} />;

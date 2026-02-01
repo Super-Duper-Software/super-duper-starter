@@ -13,7 +13,7 @@ import {
 } from "react-aria-components";
 import { Text } from "./Content";
 import { ProgressCircle } from "./ProgressCircle";
-import "./ListBox.css";
+import "./ListBox.scss";
 
 export function ListBox<T extends object>({
   children,

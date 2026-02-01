@@ -11,7 +11,7 @@ import { ColorSwatch } from "./ColorSwatch";
 import { DialogTrigger } from "./Dialog";
 import { Popover } from "./Popover";
 
-import "./ColorPicker.css";
+import "./ColorPicker.scss";
 
 export interface ColorPickerProps
   extends Omit<AriaColorPickerProps, "children"> {

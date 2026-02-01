@@ -1,0 +1,16 @@
+.signUpForm {
+  padding: 2rem;
+  background-color: var(--gray-100);
+  border-radius: var(--radius-sm);
+  width: 100%;
+  max-width: 20rem;
+}
+
+.signUpTitle {
+  text-align: center;
+  color: var(--text-color);
+}
+
+.signUpSubmit {
+  align-self: flex-end;
+}

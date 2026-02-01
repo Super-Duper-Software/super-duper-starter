@@ -7,7 +7,7 @@ import {
 } from "react-aria-components";
 import { Description, FieldError, Label } from "./Form";
 
-import "./ColorField.css";
+import "./ColorField.scss";
 
 export interface ColorFieldProps extends AriaColorFieldProps {
   label?: string;

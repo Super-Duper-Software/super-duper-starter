@@ -9,7 +9,7 @@ import {
   type HeadingProps,
 } from "react-aria-components";
 import { Heading } from "./Content";
-import "./Disclosure.css";
+import "./Disclosure.scss";
 
 export function Disclosure(props: DisclosureProps) {
   return <AriaDisclosure {...props} />;

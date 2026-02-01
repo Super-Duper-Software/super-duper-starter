@@ -12,7 +12,7 @@ import { Description, FieldButton, FieldError, Label } from "./Form";
 import { DropdownItem, DropdownListBox } from "./ListBox";
 import { Popover } from "./Popover";
 
-import "./ComboBox.css";
+import "./ComboBox.scss";
 
 export interface ComboBoxProps<T extends object>
   extends Omit<AriaComboBoxProps<T>, "children"> {

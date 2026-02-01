@@ -11,7 +11,7 @@ import {
 } from "react-aria-components";
 import { Text } from "./Content";
 import { Description, Label } from "./Form";
-import "./TagGroup.css";
+import "./TagGroup.scss";
 
 export interface TagGroupProps<T>
   extends Omit<AriaTagGroupProps, "children">,
