@@ -14,7 +14,7 @@ import {
 } from "react-aria-components";
 import { Checkbox } from "./Checkbox";
 import { ProgressCircle } from "./ProgressCircle";
-import "./Tree.css";
+import "./Tree.scss";
 
 export function Tree<T extends object>(props: TreeProps<T>) {
   return <AriaTree {...props} />;

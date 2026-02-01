@@ -13,8 +13,8 @@
     "@hookform/resolvers": "^5.2.2",
     "@superdupersoftware/api": "workspace:*",
     "@superdupersoftware/api-client": "workspace:*",
-    "@superdupersoftware/ui": "workspace:*",
     "@superdupersoftware/keyboard-shortcuts": "workspace:*",
+    "@superdupersoftware/ui": "workspace:*",
     "@tanstack/react-query": "^5.90.19",
     "hono": "^4.11.4",
     "next": "16.1.0",
@@ -27,6 +27,7 @@
     "@types/node": "^22.15.3",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
+    "sass": "^1.97.3",
     "typescript": "5.9.2"
   }
 }

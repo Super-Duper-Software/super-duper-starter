@@ -12,7 +12,7 @@ import { Button } from "./Button";
 import { Description, FieldError, Label } from "./Form";
 import { DropdownItem, DropdownListBox } from "./ListBox";
 import { Popover } from "./Popover";
-import "./Select.css";
+import "./Select.scss";
 
 export interface SelectProps<T extends object>
   extends Omit<AriaSelectProps<T>, "children"> {

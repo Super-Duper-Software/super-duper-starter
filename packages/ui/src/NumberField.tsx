@@ -9,7 +9,7 @@ import {
 } from "react-aria-components";
 import { Button } from "./Button";
 import { Description, FieldError, Label } from "./Form";
-import "./NumberField.css";
+import "./NumberField.scss";
 
 export interface NumberFieldProps extends AriaNumberFieldProps {
   label?: string;

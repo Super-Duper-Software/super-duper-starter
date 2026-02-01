@@ -5,7 +5,7 @@ import {
   ToggleButtonGroupContext,
   type ToolbarProps,
 } from "react-aria-components";
-import "./Toolbar.css";
+import "./Toolbar.scss";
 
 export function Toolbar(props: ToolbarProps) {
   const { orientation = "horizontal" } = props;

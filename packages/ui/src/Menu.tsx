@@ -15,7 +15,7 @@ import {
 } from "react-aria-components";
 import { Text } from "./Content";
 import { Popover } from "./Popover";
-import "./Menu.css";
+import "./Menu.scss";
 
 export function MenuTrigger(props: MenuTriggerProps) {
   const [trigger, menu] = React.Children.toArray(props.children) as [

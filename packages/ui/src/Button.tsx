@@ -5,7 +5,7 @@ import {
   type ButtonProps as RACButtonProps,
 } from "react-aria-components";
 import { ProgressCircle } from "./ProgressCircle";
-import "./Button.css";
+import "./Button.scss";
 
 interface ButtonProps extends RACButtonProps {
   /**

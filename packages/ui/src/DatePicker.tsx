@@ -12,7 +12,7 @@ import { DateInput, DateSegment } from "./DateField";
 import { Description, FieldButton, FieldError, Label } from "./Form";
 import { Popover } from "./Popover";
 
-import "./DatePicker.css";
+import "./DatePicker.scss";
 
 export interface DatePickerProps<T extends DateValue>
   extends AriaDatePickerProps<T> {

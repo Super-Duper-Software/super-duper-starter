@@ -39,6 +39,10 @@ const config = {
     const rule = config.module.rules.find((rule) =>
       String(rule.test).includes(".css"),
     );
+    // Update the test pattern to include SCSS files
+    rule.test = /\.(css|scss)$/;
+    // Add sass-loader before lightningcss-loader
+    rule.use.push("sass-loader");
     rule.use.push("lightningcss-loader");
     return config;
   },

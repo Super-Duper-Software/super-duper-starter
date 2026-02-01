@@ -12,7 +12,7 @@ import {
 } from "react-aria-components";
 import { Button } from "./Button";
 import { CalendarGrid } from "./Calendar";
-import "./RangeCalendar.css";
+import "./RangeCalendar.scss";
 
 export interface RangeCalendarProps<T extends DateValue>
   extends AriaRangeCalendarProps<T> {

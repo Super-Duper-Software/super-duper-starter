@@ -3,7 +3,7 @@ import { Button } from "../src/Button";
 import { Heading } from "../src/Content";
 import { DialogTrigger } from "../src/Dialog";
 import { Popover } from "../src/Popover";
-import "./styles.css";
+import "./styles.scss";
 
 import type { Meta, StoryFn } from "@storybook/react";
 
