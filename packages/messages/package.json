@@ -8,15 +8,17 @@
   },
   "scripts": {
     "typecheck": "tsc --noEmit",
+    "test": "vitest run",
     "dev": "npx @upstash/qstash-cli dev"
   },
   "devDependencies": {
     "@superdupersoftware/typescript-config": "workspace:*",
-    "@types/node": "^22.15.3"
+    "@types/node": "^22.15.3",
+    "vitest": "^4.0.18"
   },
   "dependencies": {
-    "@upstash/qstash": "^2.9.0",
     "@superdupersoftware/env": "workspace:*",
+    "@upstash/qstash": "^2.9.0",
     "typescript": "5.9.2"
   }
 }
