@@ -1,6 +1,9 @@
 import { env } from "@superdupersoftware/env";
 import { Receiver } from "@upstash/qstash";
-import type { MessageType } from "./types";
+import type { MessageData } from "./types";
+
+export { MessageDataSchema, type MessageType } from "./types";
+export type { MessageData };
 
 type ReceiveOptions = {
   signature: string;
@@ -18,22 +21,13 @@ export const verify = async ({ body, signature }: ReceiveOptions) => {
   });
 };
 
-export const send = ({
-  type,
-  jsonString = "{}",
-}: {
-  type: MessageType;
-  jsonString: string;
-}) => {
+export const send = (message: MessageData) => {
   return fetch(`${env.QSTASH_URL}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${env.QSTASH_TOKEN}`,
     },
-    body: JSON.stringify({
-      jobType: type,
-      ...JSON.parse(jsonString),
-    }),
+    body: JSON.stringify(message),
   });
 };

@@ -65,7 +65,9 @@ app.openapi(route, (c) => {
 app.post("/cron/sample", async (c) => {
   send({
     type: "sample",
-    jsonString: JSON.stringify({ cron: "data" }),
+    payload: {
+      message: "Hello from the test cron job!",
+    },
   });
   return c.json({ message: "Cron job triggered" }, 200);
 });
