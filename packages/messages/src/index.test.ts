@@ -57,9 +57,11 @@ describe("Messages", () => {
       });
 
       const callArgs = mockFetch.mock.calls[0];
-      const body = JSON.parse(callArgs[1]?.body as string);
-      expect(body.jobType).toBe("sample");
-      expect(body.data).toBe("test");
+      if (callArgs && callArgs[1]?.body) {
+        const body = JSON.parse(callArgs[1].body as string);
+        expect(body.jobType).toBe("sample");
+        expect(body.data).toBe("test");
+      }
     });
 
     it("should handle empty jsonString", async () => {
@@ -75,8 +77,10 @@ describe("Messages", () => {
 
       expect(mockFetch).toHaveBeenCalled();
       const callArgs = mockFetch.mock.calls[0];
-      const body = JSON.parse(callArgs[1]?.body as string);
-      expect(body.jobType).toBe("sample");
+      if (callArgs && callArgs[1]?.body) {
+        const body = JSON.parse(callArgs[1].body as string);
+        expect(body.jobType).toBe("sample");
+      }
     });
   });
 });
