@@ -1,8 +1,11 @@
-import { PostgreSqlContainer, StartedPostgreSqlContainer } from "@testcontainers/postgresql";
-import { PrismaPg } from "@prisma/adapter-pg";
-import { PrismaClient } from "@superdupersoftware/db";
 import { exec } from "node:child_process";
 import { promisify } from "node:util";
+import { PrismaPg } from "@prisma/adapter-pg";
+import { PrismaClient } from "@superdupersoftware/db";
+import {
+  PostgreSqlContainer,
+  type StartedPostgreSqlContainer,
+} from "@testcontainers/postgresql";
 
 const execAsync = promisify(exec);
 

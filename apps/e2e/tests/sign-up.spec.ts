@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 test.describe("Sign Up Flow", () => {
   test("should allow a user to sign up successfully", async ({ page }) => {

@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { setupTestDatabase, teardownTestDatabase } from "./db-setup";
 import app from "../app";
+import { setupTestDatabase, teardownTestDatabase } from "./db-setup";
 
 describe("Auth API", () => {
   beforeAll(async () => {

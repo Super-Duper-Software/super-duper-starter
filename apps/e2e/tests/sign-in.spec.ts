@@ -1,23 +1,25 @@
-import { test, expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 test.describe("Sign In Flow", () => {
   test.beforeEach(async ({ page }) => {
     // Create a test user before each sign-in test
     const timestamp = Date.now();
     const testEmail = `signin-test-${timestamp}@example.com`;
-    
+
     await page.goto("/sign-up");
     await page.fill('input[name="name"]', "Sign In Test User");
     await page.fill('input[name="email"]', testEmail);
     await page.fill('input[name="password"]', "password123");
     await page.click('button[type="submit"]');
-    
+
     // Wait for dashboard and store email in context
     await page.waitForURL("/dashboard", { timeout: 10000 });
-    await page.context().addCookies([
-      { name: "test-email", value: testEmail, url: "http://localhost:3000" },
-    ]);
-    
+    await page
+      .context()
+      .addCookies([
+        { name: "test-email", value: testEmail, url: "http://localhost:3000" },
+      ]);
+
     // Sign out by clearing cookies or navigating away
     await page.context().clearCookies();
   });
