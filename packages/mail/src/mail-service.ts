@@ -71,7 +71,7 @@ class MailService {
       await this.sendWithSMTP(options);
     } else {
       throw new Error(
-        "No mail transport configured. Set either RESEND_API_KEY or SMTP settings."
+        "No mail transport configured. Set either RESEND_API_KEY or SMTP settings.",
       );
     }
   }

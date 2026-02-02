@@ -1,5 +1,5 @@
-import { MailService } from "@superdupersoftware/mail";
 import { env } from "@superdupersoftware/env";
+import { MailService } from "@superdupersoftware/mail";
 import type { MiddlewareHandler } from "hono";
 import type { Env } from "../hono";
 
