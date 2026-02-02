@@ -1,6 +1,6 @@
+import fs from "node:fs";
+import path from "node:path";
 import cac from "cac";
-import fs from "fs";
-import path from "path";
 
 const cli = cac();
 
