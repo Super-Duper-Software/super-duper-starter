@@ -8,6 +8,7 @@
     "format-lint": "biome check .",
     "format-lint:fix": "biome check . --write",
     "turbo": "dotenv -- turbo",
+    "turbo:ci": "dotenv -e .env.example -- turbo",
     "typecheck": "turbo run typecheck",
     "prepare": "husky",
     "storybook": "pnpm --filter @superdupersoftware/ui storybook",
