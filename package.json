@@ -7,7 +7,7 @@
     "db": "dotenv -- pnpm --filter @superdupersoftware/db",
     "format-lint": "biome check .",
     "format-lint:fix": "biome check . --write",
-    "turbo": "turbo",
+    "turbo": "dotenv -- turbo",
     "typecheck": "turbo run typecheck",
     "prepare": "husky",
     "storybook": "pnpm --filter @superdupersoftware/ui storybook",
