@@ -11,6 +11,7 @@
     "codegen": "tsx ./src/utils/generateSpec.ts"
   },
   "devDependencies": {
+    "@prisma/adapter-pg": "^7.3.0",
     "@superdupersoftware/typescript-config": "workspace:*",
     "@testcontainers/postgresql": "^11.11.0",
     "@types/node": "^22.15.3",
