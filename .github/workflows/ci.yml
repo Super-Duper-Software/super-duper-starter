@@ -41,5 +41,8 @@ jobs:
       - name: Run the checks
         run: pnpm turbo:ci format-lint typecheck
 
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install --with-deps
+
       - name: Run tests
         run: pnpm turbo:ci test
