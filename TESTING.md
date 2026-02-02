@@ -79,7 +79,6 @@ To run integration tests with a real database:
 End-to-end tests are located in the `apps/e2e` directory:
 
 - `apps/e2e/tests/sign-up.spec.ts` - Sign-up flow tests
-- `apps/e2e/tests/sign-in.spec.ts` - Sign-in flow tests
 
 ## Writing New Tests
 

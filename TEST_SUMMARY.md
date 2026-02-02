@@ -62,12 +62,6 @@
 - ✅ Test: Error for duplicate email
 - **Status**: 4 E2E tests defined 📝
 
-#### Sign-in Flow Tests (`tests/sign-in.spec.ts`)
-- ✅ Test: Successful user sign-in
-- ✅ Test: Error for invalid credentials
-- ✅ Test: Validation error for invalid email format
-- **Status**: 3 E2E tests defined 📝
-
 ### 5. Documentation & Infrastructure
 
 - ✅ Created comprehensive TESTING.md guide
@@ -96,7 +90,7 @@ Total: 16/16 unit tests passing (100%)
 
 ### E2E Tests Status
 ```
-📝 Playwright E2E Tests - 7 tests defined
+📝 Playwright E2E Tests - 4 tests defined (sign-up flow only)
    (Requires running web app and Playwright browsers installed)
 ```
 
