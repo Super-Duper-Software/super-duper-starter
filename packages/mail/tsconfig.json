@@ -1,0 +1,9 @@
+{
+  "extends": "@superdupersoftware/typescript-config/base.json",
+  "compilerOptions": {
+    "jsx": "react",
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

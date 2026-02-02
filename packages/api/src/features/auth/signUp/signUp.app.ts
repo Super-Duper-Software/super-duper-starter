@@ -20,6 +20,14 @@ export const signUpApp = createHono().openapi(signUpRoute, async (c) => {
       c.res.headers.set(key, value);
     });
 
+    // Send welcome email
+    try {
+      await c.var.mailService.sendSignUpEmail(email, name);
+    } catch (emailError) {
+      // Log the error but don't fail the signup
+      c.var.logger?.error(emailError, "Failed to send welcome email");
+    }
+
     return c.json(res.response, res.status as 201);
   } catch (error) {
     if (error instanceof APIError) {
