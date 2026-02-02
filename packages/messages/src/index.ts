@@ -1,6 +1,6 @@
 import { env } from "@superdupersoftware/env";
 import { Receiver } from "@upstash/qstash";
-import type { MESSAGE_TYPES } from "./types";
+import type { MessageType } from "./types";
 
 type ReceiveOptions = {
   signature: string;
@@ -22,7 +22,7 @@ export const send = ({
   type,
   jsonString = "{}",
 }: {
-  type: MESSAGE_TYPES;
+  type: MessageType;
   jsonString: string;
 }) => {
   return fetch(`${env.QSTASH_URL}`, {

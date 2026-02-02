@@ -1,1 +1,1 @@
-export type MESSAGE_TYPES = "sample";
+export type MessageType = "sample";
