@@ -1,2 +1,2 @@
-export type { MailConfig, SendMailOptions } from "./mail-service";
-export { MailService } from "./mail-service";
+export type { MailConfig, SendMailOptions } from "./mailService";
+export { MailService } from "./mailService";
