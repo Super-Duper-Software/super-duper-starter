@@ -7,6 +7,7 @@
   },
   "scripts": {
     "typecheck": "tsc --noEmit",
+    "test": "vitest run",
     "dev": "docker compose up",
     "email:dev": "email dev",
     "email:build": "email export"
@@ -17,7 +18,8 @@
     "@types/nodemailer": "^6.4.22",
     "@types/react": "^19.0.14",
     "@types/react-dom": "^19.0.4",
-    "typescript": "5.9.2"
+    "typescript": "5.9.2",
+    "vitest": "^4.0.18"
   },
   "dependencies": {
     "@react-email/components": "^0.0.28",

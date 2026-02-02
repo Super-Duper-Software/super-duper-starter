@@ -6,11 +6,13 @@
     ".": "./src/index.ts"
   },
   "scripts": {
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
   },
   "devDependencies": {
     "@superdupersoftware/typescript-config": "workspace:*",
-    "@types/node": "^22.15.3"
+    "@types/node": "^22.15.3",
+    "vitest": "^4.0.18"
   },
   "dependencies": {
     "pino": "^10.3.0",

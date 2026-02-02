@@ -25,6 +25,10 @@
     "typecheck": {
       "dependsOn": ["^generate", "^typecheck"]
     },
+    "test": {
+      "dependsOn": ["^generate", "^test"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"]
+    },
     "dev": {
       "dependsOn": ["generate"],
       "cache": false,
