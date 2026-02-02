@@ -19,7 +19,7 @@ workerApp.post(
     try {
       const isValid = await verify({
         signature: c.req.header("Upstash-Signature") || "",
-        body: await c.req.text(),
+        body: await c.req.raw.clone().text(),
       });
       if (!isValid) {
         return c.json({ message: "Invalid signature" }, 401);
