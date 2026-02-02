@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "develop": "wrangler dev"
+    "dev": "wrangler dev"
   },
   "devDependencies": {
     "@superdupersoftware/typescript-config": "workspace:*",
@@ -14,9 +14,12 @@
     "wrangler": "^4.61.1"
   },
   "dependencies": {
+    "@hono/zod-validator": "^0.7.6",
     "@superdupersoftware/jobs": "workspace:*",
     "@superdupersoftware/logger": "workspace:*",
+    "@superdupersoftware/messages": "workspace:*",
     "hono": "^4.11.4",
-    "tsx": "^4.21.0"
+    "tsx": "^4.21.0",
+    "zod": "^4.3.6"
   }
 }

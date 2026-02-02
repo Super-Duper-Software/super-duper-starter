@@ -2,10 +2,11 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "worker-app",
   "main": "src/app.ts",
+  "compatibility_flags": [
+    "nodejs_compat",
+    "nodejs_compat_populate_process_env"
+  ],
   "compatibility_date": "2026-02-01"
-  // "compatibility_flags": [
-  //   "nodejs_compat"
-  // ],
   // "vars": {
   //   "MY_VAR": "my-variable"
   // },

@@ -20,6 +20,7 @@
     "@superdupersoftware/auth": "workspace:*",
     "@superdupersoftware/db": "workspace:*",
     "@superdupersoftware/logger": "workspace:*",
+    "@superdupersoftware/messages": "workspace:*",
     "hono": "^4.11.4",
     "tsx": "^4.21.0"
   }

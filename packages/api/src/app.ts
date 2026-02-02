@@ -1,6 +1,7 @@
 import { createRoute, z } from "@hono/zod-openapi";
 import { Scalar } from "@scalar/hono-api-reference";
 import { prisma, UserResultSchema } from "@superdupersoftware/db";
+import { send } from "@superdupersoftware/messages";
 import { HTTPException } from "hono/http-exception";
 import { requestId } from "hono/request-id";
 import { accountApp } from "./features/account/account.app";
@@ -55,11 +56,19 @@ const app = createHono().basePath("/api");
 app.use(requestId());
 app.use(loggerMiddleware());
 
-app.openapi(route, (c) =>
-  c.json({
+app.openapi(route, (c) => {
+  return c.json({
     message: "Up and running!",
-  }),
-);
+  });
+});
+
+app.post("/cron/sample", async (c) => {
+  send({
+    type: "sample",
+    jsonString: JSON.stringify({ cron: "data" }),
+  });
+  return c.json({ message: "Cron job triggered" }, 200);
+});
 
 app.openapi(userRoute, async (c) => {
   const users = await prisma.user.findMany({
