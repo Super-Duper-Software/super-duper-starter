@@ -10,7 +10,7 @@
     "turbo": "dotenv -- turbo",
     "turbo:ci": "dotenv -e .env.example -- turbo",
     "typecheck": "turbo run typecheck",
-    "test": "turbo run test",
+    "test": "dotenv -- turbo run test",
     "prepare": "husky",
     "storybook": "pnpm --filter @superdupersoftware/ui storybook",
     "jobs": "pnpm --filter @superdupersoftware/jobs job",

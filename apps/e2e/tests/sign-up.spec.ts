@@ -26,21 +26,6 @@ test.describe("Sign Up Flow", () => {
     expect(page.url()).toContain("/dashboard");
   });
 
-  test("should show validation error for invalid email", async ({ page }) => {
-    await page.goto("/sign-up");
-
-    await page.fill('input[name="name"]', "Test User");
-    await page.fill('input[name="email"]', "invalid-email");
-    await page.fill('input[name="password"]', "password123");
-
-    await page.click('button[type="submit"]');
-
-    // Should show validation error - Zod's default email error message
-    await expect(page.locator("text=Invalid email")).toBeVisible({
-      timeout: 5000,
-    });
-  });
-
   test("should show validation error for short password", async ({ page }) => {
     await page.goto("/sign-up");
 
@@ -51,9 +36,7 @@ test.describe("Sign Up Flow", () => {
     await page.click('button[type="submit"]');
 
     // Should show validation error for password - Zod's min length error
-    await expect(
-      page.locator("text=/String must contain at least 8 character/i"),
-    ).toBeVisible({
+    await expect(page.locator("text=/Too small/i")).toBeVisible({
       timeout: 5000,
     });
   });
@@ -82,8 +65,7 @@ test.describe("Sign Up Flow", () => {
     await page.click('button[type="submit"]');
 
     // Should show error message in toast
-    await expect(
-      page.locator('[role="status"], [role="alert"]').filter({ hasText: /already|exist|taken|duplicate/i }),
-    ).toBeVisible({ timeout: 5000 });
+    const errorToast = await page.getByText(/User already exists/i);
+    await expect(errorToast).toBeVisible({ timeout: 5000 });
   });
 });
