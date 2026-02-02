@@ -40,3 +40,6 @@ jobs:
 
       - name: Run the checks
         run: pnpm turbo:ci format-lint typecheck
+
+      - name: Run tests
+        run: pnpm turbo:ci test
