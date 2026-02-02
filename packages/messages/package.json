@@ -1,0 +1,22 @@
+{
+  "name": "@superdupersoftware/messages",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "dev": "npx @upstash/qstash-cli dev"
+  },
+  "devDependencies": {
+    "@superdupersoftware/typescript-config": "workspace:*",
+    "@types/node": "^22.15.3"
+  },
+  "dependencies": {
+    "@upstash/qstash": "^2.9.0",
+    "@superdupersoftware/env": "workspace:*",
+    "typescript": "5.9.2"
+  }
+}

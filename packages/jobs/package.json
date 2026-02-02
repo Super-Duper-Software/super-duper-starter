@@ -1,0 +1,24 @@
+{
+  "name": "@superdupersoftware/jobs",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "job": "tsx ./src/cli.ts"
+  },
+  "devDependencies": {
+    "@superdupersoftware/db": "workspace:*",
+    "@superdupersoftware/typescript-config": "workspace:*",
+    "@types/node": "^22.15.3",
+    "cac": "^6.7.14",
+    "execa": "^9.6.1",
+    "tsx": "^4.21.0"
+  },
+  "dependencies": {
+    "typescript": "5.9.2"
+  }
+}

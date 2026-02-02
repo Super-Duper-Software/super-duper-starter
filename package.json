@@ -7,10 +7,13 @@
     "db": "dotenv -- pnpm --filter @superdupersoftware/db",
     "format-lint": "biome check .",
     "format-lint:fix": "biome check . --write",
-    "turbo": "turbo",
+    "turbo": "dotenv -- turbo",
+    "turbo:ci": "dotenv -e .env.example -- turbo",
     "typecheck": "turbo run typecheck",
     "prepare": "husky",
-    "storybook": "pnpm --filter @superdupersoftware/ui storybook"
+    "storybook": "pnpm --filter @superdupersoftware/ui storybook",
+    "jobs": "pnpm --filter @superdupersoftware/jobs job",
+    "worker": "pnpm --filter worker"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.11",

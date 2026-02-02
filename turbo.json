@@ -1,7 +1,7 @@
 {
   "$schema": "https://turborepo.dev/schema.json",
   "ui": "tui",
-  "globalEnv": ["DATABASE_URL"],
+  "globalEnv": ["DATABASE_URL", "BETTER_AUTH_*", "QSTASH_*"],
   "tasks": {
     "//#format-lint": {},
     "//#format-lint:fix": {

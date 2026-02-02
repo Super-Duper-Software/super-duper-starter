@@ -1,27 +1,25 @@
 {
-  "name": "@superdupersoftware/api",
+  "name": "worker",
   "version": "0.0.0",
   "private": true,
-  "exports": {
-    "./*": "./src/*.ts"
-  },
+  "type": "module",
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "codegen": "tsx ./src/utils/generateSpec.ts"
+    "dev": "wrangler dev"
   },
   "devDependencies": {
     "@superdupersoftware/typescript-config": "workspace:*",
     "@types/node": "^22.15.3",
-    "typescript": "5.9.2"
+    "typescript": "5.9.2",
+    "wrangler": "^4.61.1"
   },
   "dependencies": {
-    "@hono/zod-openapi": "^1.2.0",
-    "@scalar/hono-api-reference": "^0.9.35",
-    "@superdupersoftware/auth": "workspace:*",
-    "@superdupersoftware/db": "workspace:*",
+    "@hono/zod-validator": "^0.7.6",
+    "@superdupersoftware/jobs": "workspace:*",
     "@superdupersoftware/logger": "workspace:*",
     "@superdupersoftware/messages": "workspace:*",
     "hono": "^4.11.4",
-    "tsx": "^4.21.0"
+    "tsx": "^4.21.0",
+    "zod": "^4.3.6"
   }
 }
