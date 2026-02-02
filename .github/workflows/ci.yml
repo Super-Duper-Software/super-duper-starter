@@ -42,7 +42,7 @@ jobs:
         run: pnpm turbo:ci format-lint typecheck
 
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps
+        run: pnpm install:e2e
 
       - name: Run tests
         run: pnpm turbo:ci test
