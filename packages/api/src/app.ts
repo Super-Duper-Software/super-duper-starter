@@ -8,6 +8,7 @@ import { accountApp } from "./features/account/account.app";
 import { authApp } from "./features/auth/auth.app";
 import { createHono } from "./hono";
 import { loggerMiddleware } from "./middleware/logger";
+import { mailMiddleware } from "./middleware/mail";
 
 type OpenAPIObjectConfig = Parameters<typeof app.getOpenAPI31Document>[0];
 
@@ -55,6 +56,7 @@ const app = createHono().basePath("/api");
 
 app.use(requestId());
 app.use(loggerMiddleware());
+app.use(mailMiddleware());
 
 app.openapi(route, (c) => {
   return c.json({
