@@ -10,11 +10,12 @@
     "turbo": "dotenv -- turbo",
     "turbo:ci": "dotenv -e .env.example -- turbo",
     "typecheck": "turbo run typecheck",
-    "test": "dotenv -- turbo run test",
+    "test": "dotenv -- turbo run test --filter='!e2e'",
     "prepare": "husky",
     "storybook": "pnpm --filter @superdupersoftware/ui storybook",
     "jobs": "pnpm --filter @superdupersoftware/jobs job",
     "worker": "pnpm --filter worker",
+    "e2e": "dotenv -- pnpm --filter=e2e",
     "install:e2e": "cd apps/e2e && pnpm exec playwright install"
   },
   "devDependencies": {
