@@ -4,8 +4,7 @@
     "outDir": "dist",
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "jsx": "react-jsx"
+    "moduleResolution": "Bundler"
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
